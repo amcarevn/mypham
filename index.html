@@ -18,33 +18,33 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Roboto', sans-serif;
-      background: #f7faf6;
-      color: #2d3a2e;
+      background: #f7f4e2;
+      color: #2a2010;
       line-height: 1.7;
       overflow-x: hidden;
     }
 
     /* ===== DESIGN TOKENS ===== */
     :root {
-      --green-50:  #f2f8f2;
-      --green-100: #e0f0e0;
-      --green-200: #c2e0c2;
-      --green-300: #8fbe8f;
-      --green-400: #5a9f5a;
-      --green-500: #3d7a3d;
-      --green-600: #2d5e2d;
-      --cream:     #faf7f2;
-      --sand:      #f0ebe0;
-      --text-dark: #1e2b1f;
-      --text-mid:  #4a5e4b;
-      --text-light:#7a927b;
+      --green-50:  #f7f4e2;
+      --green-100: #ede8be;
+      --green-200: #d4c478;
+      --green-300: #b0a040;
+      --green-400: #7a8c00;
+      --green-500: #4a6400;
+      --green-600: #324e01;
+      --cream:     #faf5e4;
+      --sand:      #ede4c4;
+      --text-dark: #2a2010;
+      --text-mid:  #5c5530;
+      --text-light:#8a8050;
       --white:     #ffffff;
       --radius-sm: 8px;
       --radius-md: 16px;
       --radius-lg: 32px;
-      --shadow-sm: 0 2px 12px rgba(61,122,61,.10);
-      --shadow-md: 0 8px 32px rgba(61,122,61,.14);
-      --shadow-lg: 0 20px 60px rgba(61,122,61,.18);
+      --shadow-sm: 0 2px 12px rgba(74,100,0,.12);
+      --shadow-md: 0 8px 32px rgba(74,100,0,.16);
+      --shadow-lg: 0 20px 60px rgba(74,100,0,.22);
     }
 
     /* ===== TYPOGRAPHY ===== */
@@ -61,7 +61,7 @@
     /* ===== LANGUAGE TOGGLE ===== */
     #lang-bar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      background: rgba(242,248,242,.92);
+      background: rgba(247,244,226,.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--green-200);
       padding: 12px 24px;
@@ -84,7 +84,7 @@
     }
     .lang-btn.active {
       background: var(--white); color: var(--green-500);
-      box-shadow: 0 1px 6px rgba(61,122,61,.18);
+      box-shadow: 0 1px 6px rgba(74,100,0,.18);
     }
     .nav-cta {
       background: var(--green-400); color: var(--white);
@@ -99,8 +99,8 @@
     #hero {
       padding-top: 120px;
       background:
-        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(194,224,194,.45) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 80% at 20% 70%, rgba(224,240,224,.4) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(212,196,120,.38) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 80% at 20% 70%, rgba(237,228,196,.4) 0%, transparent 60%),
         var(--cream);
       min-height: 100vh;
       display: flex; align-items: center;
@@ -110,7 +110,7 @@
       content: '';
       position: absolute; top: -80px; right: -80px;
       width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(143,190,143,.25) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(176,160,64,.22) 0%, transparent 70%);
       border-radius: 50%;
     }
     .hero-grid {
@@ -134,10 +134,10 @@
       color: var(--white); border: none; border-radius: 99px;
       padding: 16px 36px; font-size: 1rem; font-weight: 500;
       cursor: pointer; text-decoration: none;
-      box-shadow: 0 6px 24px rgba(61,122,61,.35);
+      box-shadow: 0 6px 24px rgba(74,100,0,.35);
       transition: transform .25s, box-shadow .25s;
     }
-    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(61,122,61,.4); }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(74,100,0,.4); }
     .hero-cta-arrow { font-size: 1.1rem; transition: transform .25s; }
     .hero-cta:hover .hero-cta-arrow { transform: translateX(4px); }
     .hero-trust {
@@ -154,31 +154,13 @@
       display: flex; justify-content: center; align-items: center;
       position: relative;
     }
-    .product-stack {
-      position: relative; width: 340px; height: 420px;
+    .product-image {
+      width: 100%;
+      max-width: 500px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      display: block;
     }
-    .product-card {
-      position: absolute; background: var(--white);
-      border-radius: var(--radius-md); box-shadow: var(--shadow-md);
-      display: flex; flex-direction: column; align-items: center;
-      justify-content: center; padding: 20px;
-      transition: transform .4s;
-    }
-    .product-card:nth-child(1) { width: 200px; height: 220px; top: 0; left: 20px; z-index: 4; background: linear-gradient(145deg,#e8f5e8,#fff); }
-    .product-card:nth-child(2) { width: 180px; height: 200px; top: 40px; left: 140px; z-index: 3; background: linear-gradient(145deg,#f0f8f0,#fff); }
-    .product-card:nth-child(3) { width: 160px; height: 180px; top: 180px; left: 10px; z-index: 2; background: linear-gradient(145deg,#e4f3e4,#fff); }
-    .product-card:nth-child(4) { width: 170px; height: 190px; top: 210px; left: 150px; z-index: 1; background: linear-gradient(145deg,#f5faf5,#fff); }
-    .product-card:hover { transform: translateY(-6px) scale(1.03); z-index: 10; }
-    .product-icon { font-size: 2.4rem; margin-bottom: 8px; }
-    .product-name { font-family: 'Roboto', sans-serif; font-size: .95rem; font-weight: 600; color: var(--text-dark); text-align: center; }
-    .product-step { font-size: .7rem; color: var(--green-400); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
-    .floating-leaf {
-      position: absolute; font-size: 1.8rem; animation: float 4s ease-in-out infinite;
-    }
-    .floating-leaf:nth-child(5) { top: -20px; right: -10px; animation-delay: 0s; }
-    .floating-leaf:nth-child(6) { bottom: 40px; left: -20px; animation-delay: 1.5s; }
-    .floating-leaf:nth-child(7) { top: 180px; right: -30px; animation-delay: .8s; font-size: 1.2rem; }
-    @keyframes float { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-12px) rotate(8deg); } }
 
     /* ===== WAVE DIVIDER ===== */
     .wave { display: block; width: 100%; overflow: hidden; line-height: 0; }
@@ -289,7 +271,7 @@
       background: linear-gradient(135deg, var(--green-300), var(--green-400));
       color: var(--white); display: flex; align-items: center; justify-content: center;
       font-family: 'Roboto', sans-serif; font-size: 1.6rem; font-weight: 600;
-      margin: 0 auto 20px; box-shadow: 0 4px 16px rgba(61,122,61,.3);
+      margin: 0 auto 20px; box-shadow: 0 4px 16px rgba(74,100,0,.3);
     }
     .how-step h3 { font-size: 1rem; margin-bottom: 8px; color: var(--text-dark); }
     .how-step p { font-size: .82rem; }
@@ -392,10 +374,10 @@
       color: var(--white); border: none; border-radius: 99px;
       padding: 16px 36px; font-size: 1rem; font-weight: 600;
       cursor: pointer; font-family: 'Roboto', sans-serif;
-      box-shadow: 0 6px 24px rgba(61,122,61,.35);
+      box-shadow: 0 6px 24px rgba(74,100,0,.35);
       transition: transform .25s, box-shadow .25s;
     }
-    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(61,122,61,.4); }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(74,100,0,.4); }
     .form-note { font-size: .78rem; color: var(--text-light); margin-top: 8px; }
     .success-msg {
       display: none; background: var(--green-100); color: var(--green-600);
@@ -436,7 +418,8 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
-      .hero-visual { display: none; }
+      .hero-visual { display: flex; margin-top: 32px; }
+      .product-image { max-width: 340px; }
       .stats-grid { grid-template-columns: repeat(2,1fr); }
       .problem-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: repeat(2,1fr); }
@@ -520,45 +503,9 @@
         </div>
       </div>
 
-      <!-- Product Stack Visual -->
-      <div class="hero-visual" aria-hidden="true">
-        <div class="product-stack">
-          <div class="product-card">
-            <div class="product-step">Step 01</div>
-            <div class="product-icon">🧴</div>
-            <div class="product-name">
-              <span data-lang="vi">Sữa Rửa Mặt</span>
-              <span data-lang="en">Purifying Cleanser</span>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-step">Step 02</div>
-            <div class="product-icon">💧</div>
-            <div class="product-name">
-              <span data-lang="vi">Nước Thần</span>
-              <span data-lang="en">Activating Essence</span>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-step">Step 03</div>
-            <div class="product-icon">✨</div>
-            <div class="product-name">
-              <span data-lang="vi">Siêu Tinh Chất</span>
-              <span data-lang="en">Brightening Serum</span>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-step">Step 04</div>
-            <div class="product-icon">🌙</div>
-            <div class="product-name">
-              <span data-lang="vi">Kem Phục Hồi</span>
-              <span data-lang="en">Recovery Cream</span>
-            </div>
-          </div>
-          <span class="floating-leaf">🍃</span>
-          <span class="floating-leaf">🌱</span>
-          <span class="floating-leaf">🍀</span>
-        </div>
+      <!-- Product Image Visual -->
+      <div class="hero-visual">
+        <img src="Trọn bộ sản phẩm.png" alt="Bộ sản phẩm LUMINAE trị nám chuyên sâu 4 bước" class="product-image" />
       </div>
     </div>
   </div>
