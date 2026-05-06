@@ -795,9 +795,12 @@
       </div>
 
       <div class="features-visual reveal">
-        <div class="big-stat">4 Tuần</div>
+        <div class="big-stat">
+          <span data-lang="fil">4 Linggo</span>
+          <span data-lang="en">4 Weeks</span>
+        </div>
         <div class="big-stat-label">
-          <span data-lang="fil">Makikita ang resulta / Visible results in 4 weeks</span>
+          <span data-lang="fil">Garantisadong makikita ang resulta</span>
           <span data-lang="en">Visible results guaranteed</span>
         </div>
         <div style="background:var(--white);border-radius:var(--radius-md);padding:20px;margin-top:20px">
@@ -1158,7 +1161,7 @@
             type="text"
             class="form-input"
             id="nameInput"
-            placeholder="Họ và tên / Full name"
+            placeholder="Buong pangalan"
             required
             aria-label="Full name"
             aria-describedby="formError"
@@ -1167,7 +1170,7 @@
             type="tel"
             class="form-input"
             id="phoneInput"
-            placeholder="Số điện thoại / Phone"
+            placeholder="Telepono"
             required
             aria-label="Phone number"
             aria-describedby="formError"
@@ -1178,21 +1181,19 @@
           type="email"
           class="form-input"
           id="emailInput"
-          placeholder="Email của bạn / Your email"
+          placeholder="Iyong email"
           required
           aria-label="Email address"
           aria-describedby="formError"
           pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
         />
         <select class="form-select" id="concernSelect" aria-label="Main skin concern" aria-describedby="formError">
-          <option value="" disabled selected>
-            Vấn đề chính của bạn / Main skin concern
-          </option>
-          <option value="nam">Nám / Melasma</option>
-          <option value="tan-nhang">Tàn nhang / Freckles</option>
-          <option value="dom-nau">Đốm nâu / Dark spots</option>
-          <option value="da-xin">Da xỉn màu / Dull skin</option>
-          <option value="khac">Khác / Other</option>
+          <option value="" disabled selected>Pangunahing alalahanin sa balat</option>
+          <option value="melasma">Melasma</option>
+          <option value="freckles">Mga tuldok</option>
+          <option value="dark-spots">Mga dark spot</option>
+          <option value="dull-skin">Mapurol na balat</option>
+          <option value="other">Iba pa</option>
         </select>
         <button type="submit" class="submit-btn">
           <span data-lang="fil">🌿 Mag-register para sa Deal Ngayon</span>
@@ -1297,6 +1298,35 @@
 ============================= -->
 <script>
   /* ── Language Toggle ── */
+  var FORM_TRANSLATIONS = {
+    fil: {
+      name:    'Buong pangalan',
+      phone:   'Telepono',
+      email:   'Iyong email',
+      options: {
+        '':          'Pangunahing alalahanin sa balat',
+        'melasma':   'Melasma',
+        'freckles':  'Mga tuldok',
+        'dark-spots':'Mga dark spot',
+        'dull-skin': 'Mapurol na balat',
+        'other':     'Iba pa'
+      }
+    },
+    en: {
+      name:    'Full name',
+      phone:   'Phone',
+      email:   'Your email',
+      options: {
+        '':          'Main skin concern',
+        'melasma':   'Melasma',
+        'freckles':  'Freckles',
+        'dark-spots':'Dark spots',
+        'dull-skin': 'Dull skin',
+        'other':     'Other'
+      }
+    }
+  };
+
   function setLang(lang) {
     document.body.classList.toggle('lang-en', lang === 'en');
     document.documentElement.lang = lang === 'en' ? 'en' : 'fil';
@@ -1304,6 +1334,20 @@
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.getElementById('btn-fil').setAttribute('aria-pressed', lang === 'fil');
     document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+
+    /* Update form placeholders */
+    var t = FORM_TRANSLATIONS[lang] || FORM_TRANSLATIONS['fil'];
+    document.getElementById('nameInput').placeholder  = t.name;
+    document.getElementById('phoneInput').placeholder = t.phone;
+    document.getElementById('emailInput').placeholder = t.email;
+
+    /* Update select options */
+    Array.from(document.getElementById('concernSelect').options).forEach(function(opt) {
+      if (Object.prototype.hasOwnProperty.call(t.options, opt.value)) {
+        opt.text = t.options[opt.value];
+      }
+    });
+
     try { localStorage.setItem('oria_lang', lang); } catch(e) { console.warn('localStorage unavailable:', e); }
   }
 
