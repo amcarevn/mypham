@@ -1298,6 +1298,35 @@
 ============================= -->
 <script>
   /* ── Language Toggle ── */
+  var FORM_TRANSLATIONS = {
+    fil: {
+      name:    'Buong pangalan',
+      phone:   'Telepono',
+      email:   'Iyong email',
+      options: {
+        '':          'Pangunahing alalahanin sa balat',
+        'melasma':   'Melasma',
+        'freckles':  'Mga tuldok',
+        'dark-spots':'Mga dark spot',
+        'dull-skin': 'Mapurol na balat',
+        'other':     'Iba pa'
+      }
+    },
+    en: {
+      name:    'Full name',
+      phone:   'Phone',
+      email:   'Your email',
+      options: {
+        '':          'Main skin concern',
+        'melasma':   'Melasma',
+        'freckles':  'Freckles',
+        'dark-spots':'Dark spots',
+        'dull-skin': 'Dull skin',
+        'other':     'Other'
+      }
+    }
+  };
+
   function setLang(lang) {
     document.body.classList.toggle('lang-en', lang === 'en');
     document.documentElement.lang = lang === 'en' ? 'en' : 'fil';
@@ -1307,17 +1336,17 @@
     document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
 
     /* Update form placeholders */
-    var isFil = lang !== 'en';
-    document.getElementById('nameInput').placeholder  = isFil ? 'Buong pangalan'  : 'Full name';
-    document.getElementById('phoneInput').placeholder = isFil ? 'Telepono'        : 'Phone';
-    document.getElementById('emailInput').placeholder = isFil ? 'Iyong email'     : 'Your email';
+    var t = FORM_TRANSLATIONS[lang] || FORM_TRANSLATIONS['fil'];
+    document.getElementById('nameInput').placeholder  = t.name;
+    document.getElementById('phoneInput').placeholder = t.phone;
+    document.getElementById('emailInput').placeholder = t.email;
 
     /* Update select options */
-    var sel = document.getElementById('concernSelect');
-    var opts = isFil
-      ? ['Pangunahing alalahanin sa balat', 'Melasma', 'Mga tuldok', 'Mga dark spot', 'Mapurol na balat', 'Iba pa']
-      : ['Main skin concern',               'Melasma', 'Freckles',   'Dark spots',    'Dull skin',        'Other'];
-    Array.from(sel.options).forEach(function(opt, i) { opt.text = opts[i]; });
+    Array.from(document.getElementById('concernSelect').options).forEach(function(opt) {
+      if (Object.prototype.hasOwnProperty.call(t.options, opt.value)) {
+        opt.text = t.options[opt.value];
+      }
+    });
 
     try { localStorage.setItem('oria_lang', lang); } catch(e) { console.warn('localStorage unavailable:', e); }
   }
