@@ -12,6 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
     /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -123,7 +126,7 @@
       letter-spacing: .08em; margin-bottom: 20px;
     }
     .hero-badge::before {
-      content: '🌿'; font-size: .9rem;
+      font-family: "Font Awesome 6 Free"; content: '\f06c'; font-weight: 900; font-size: .9rem;
     }
     .hero-title { margin-bottom: 20px; color: var(--text-dark); }
     .hero-title em { font-style: italic; color: var(--green-500); }
@@ -241,7 +244,7 @@
     .step-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--text-dark); margin-bottom: 12px; }
     .step-benefits { list-style: none; text-align: left; }
     .step-benefits li { font-size: .82rem; color: var(--text-mid); padding: 4px 0; display: flex; gap: 8px; align-items: flex-start; }
-    .step-benefits li::before { content: '🌿'; font-size: .7rem; margin-top: 3px; flex-shrink: 0; }
+    .step-benefits li::before { font-family: "Font Awesome 6 Free"; content: '\f06c'; font-weight: 900; font-size: .7rem; margin-top: 3px; flex-shrink: 0; color: var(--green-400); }
 
     /* ===== FEATURES ===== */
     #features { background: var(--cream); }
@@ -505,15 +508,15 @@
         </a>
 
         <div class="hero-trust">
-          <div class="trust-item"><span>🌿</span>
+          <div class="trust-item"><span><i class="fa-solid fa-leaf"></i></span>
             <span data-lang="vi">100% chiết xuất thiên nhiên</span>
             <span data-lang="en">100% Natural Extracts</span>
           </div>
-          <div class="trust-item"><span>🔬</span>
+          <div class="trust-item"><span><i class="fa-solid fa-microscope"></i></span>
             <span data-lang="vi">Kiểm nghiệm lâm sàng</span>
             <span data-lang="en">Clinically Tested</span>
           </div>
-          <div class="trust-item"><span>✨</span>
+          <div class="trust-item"><span><i class="fa-solid fa-wand-magic-sparkles"></i></span>
             <span data-lang="vi">Không paraben · Không cồn</span>
             <span data-lang="en">Paraben-free · Alcohol-free</span>
           </div>
@@ -525,7 +528,7 @@
         <div class="product-stack">
           <div class="product-card">
             <div class="product-step">Step 01</div>
-            <div class="product-icon">🧴</div>
+            <div class="product-icon"><i class="fa-solid fa-pump-soap"></i></div>
             <div class="product-name">
               <span data-lang="vi">Sữa Rửa Mặt</span>
               <span data-lang="en">Purifying Cleanser</span>
@@ -533,7 +536,7 @@
           </div>
           <div class="product-card">
             <div class="product-step">Step 02</div>
-            <div class="product-icon">💧</div>
+            <div class="product-icon"><i class="fa-solid fa-droplet"></i></div>
             <div class="product-name">
               <span data-lang="vi">Nước Thần</span>
               <span data-lang="en">Activating Essence</span>
@@ -541,7 +544,7 @@
           </div>
           <div class="product-card">
             <div class="product-step">Step 03</div>
-            <div class="product-icon">✨</div>
+            <div class="product-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
             <div class="product-name">
               <span data-lang="vi">Siêu Tinh Chất</span>
               <span data-lang="en">Brightening Serum</span>
@@ -549,15 +552,15 @@
           </div>
           <div class="product-card">
             <div class="product-step">Step 04</div>
-            <div class="product-icon">🌙</div>
+            <div class="product-icon"><i class="fa-solid fa-moon"></i></div>
             <div class="product-name">
               <span data-lang="vi">Kem Phục Hồi</span>
               <span data-lang="en">Recovery Cream</span>
             </div>
           </div>
-          <span class="floating-leaf">🍃</span>
-          <span class="floating-leaf">🌱</span>
-          <span class="floating-leaf">🍀</span>
+          <span class="floating-leaf"><i class="fa-solid fa-leaf"></i></span>
+          <span class="floating-leaf"><i class="fa-solid fa-seedling"></i></span>
+          <span class="floating-leaf"><i class="fa-solid fa-clover"></i></span>
         </div>
       </div>
     </div>
@@ -613,7 +616,7 @@
     <div class="problem-grid">
       <!-- Pain 1 -->
       <div class="problem-card reveal">
-        <span class="pain-icon">😔</span>
+        <span class="pain-icon"><i class="fa-regular fa-face-frown"></i></span>
         <div class="pain-title">
           <span data-lang="vi">Nám cứ mờ rồi lại tái phát</span>
           <span data-lang="en">Dark spots fade, then come back</span>
@@ -629,7 +632,7 @@
       </div>
       <!-- Pain 2 -->
       <div class="problem-card reveal reveal-delay-1">
-        <span class="pain-icon">🌑</span>
+        <span class="pain-icon"><i class="fa-solid fa-circle" style="color:#1a1a2e"></i></span>
         <div class="pain-title">
           <span data-lang="vi">Da xỉn màu, tông không đều</span>
           <span data-lang="en">Dull, uneven skin tone</span>
@@ -645,7 +648,7 @@
       </div>
       <!-- Pain 3 -->
       <div class="problem-card reveal reveal-delay-2">
-        <span class="pain-icon">⚡</span>
+        <span class="pain-icon"><i class="fa-solid fa-bolt"></i></span>
         <div class="pain-title">
           <span data-lang="vi">Da mỏng, kích ứng với hoạt chất mạnh</span>
           <span data-lang="en">Sensitive skin reacts to strong actives</span>
@@ -682,7 +685,7 @@
     <div class="steps-grid">
       <!-- Step 1 -->
       <div class="step-card reveal" data-step="01">
-        <div class="step-icon">🧴</div>
+        <div class="step-icon"><i class="fa-solid fa-pump-soap"></i></div>
         <div class="step-number">Step 01 · Morning & Night</div>
         <div class="step-name">
           <span data-lang="vi">Sữa Rửa Mặt</span>
@@ -705,7 +708,7 @@
       </div>
       <!-- Step 2 -->
       <div class="step-card reveal reveal-delay-1" data-step="02">
-        <div class="step-icon">💧</div>
+        <div class="step-icon"><i class="fa-solid fa-droplet"></i></div>
         <div class="step-number">Step 02 · After Cleansing</div>
         <div class="step-name">
           <span data-lang="vi">Nước Thần (Essence)</span>
@@ -728,7 +731,7 @@
       </div>
       <!-- Step 3 -->
       <div class="step-card reveal reveal-delay-2" data-step="03">
-        <div class="step-icon">✨</div>
+        <div class="step-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
         <div class="step-number">Step 03 · Core Treatment</div>
         <div class="step-name">
           <span data-lang="vi">Siêu Tinh Chất (Serum)</span>
@@ -751,7 +754,7 @@
       </div>
       <!-- Step 4 -->
       <div class="step-card reveal reveal-delay-3" data-step="04">
-        <div class="step-icon">🌙</div>
+        <div class="step-icon"><i class="fa-solid fa-moon"></i></div>
         <div class="step-number">Step 04 · Final Lock</div>
         <div class="step-name">
           <span data-lang="vi">Kem Phục Hồi</span>
@@ -793,7 +796,7 @@
         </h2>
         <div class="features-list">
           <div class="feature-item reveal">
-            <div class="feature-icon-wrap">🧬</div>
+            <div class="feature-icon-wrap"><i class="fa-solid fa-dna"></i></div>
             <div class="feature-text">
               <h3>
                 <span data-lang="vi">Ức Chế Melanin Từ Gốc</span>
@@ -806,7 +809,7 @@
             </div>
           </div>
           <div class="feature-item reveal reveal-delay-1">
-            <div class="feature-icon-wrap">💥</div>
+            <div class="feature-icon-wrap"><i class="fa-solid fa-fire"></i></div>
             <div class="feature-text">
               <h3>
                 <span data-lang="vi">Phá Vỡ Sắc Tố Hiện Hữu</span>
@@ -819,7 +822,7 @@
             </div>
           </div>
           <div class="feature-item reveal reveal-delay-2">
-            <div class="feature-icon-wrap">🛡️</div>
+            <div class="feature-icon-wrap"><i class="fa-solid fa-shield"></i></div>
             <div class="feature-text">
               <h3>
                 <span data-lang="vi">Phục Hồi Hàng Rào Da</span>
@@ -832,7 +835,7 @@
             </div>
           </div>
           <div class="feature-item reveal reveal-delay-3">
-            <div class="feature-icon-wrap">🔄</div>
+            <div class="feature-icon-wrap"><i class="fa-solid fa-rotate"></i></div>
             <div class="feature-text">
               <h3>
                 <span data-lang="vi">Ngăn Nám Tái Phát Bền Lâu</span>
@@ -1078,7 +1081,7 @@
           <span data-lang="en">I'd used every pigmentation cream imaginable for 3 years — spots would fade then come back darker. After 6 weeks with LUMINAE, my spots have faded 70% and haven't returned despite sun exposure. Skin texture is smoother than ever, pores are smaller and my tone has never been this even.</span>
         </p>
         <div class="reviewer">
-          <div class="reviewer-avatar">👩</div>
+          <div class="reviewer-avatar"><i class="fa-solid fa-user"></i></div>
           <div>
             <div class="stars">★★★★★</div>
             <div class="reviewer-name">Nguyễn Minh Thư</div>
@@ -1101,7 +1104,7 @@
           <span data-lang="en">My skin is extremely sensitive — strong actives always cause irritation. With LUMINAE, absolutely no redness or peeling. By week 2 my skin was noticeably brighter. This is the first pigmentation regimen I've been able to use consistently without fear of a reaction. Truly impressive!</span>
         </p>
         <div class="reviewer">
-          <div class="reviewer-avatar">👩‍🦱</div>
+          <div class="reviewer-avatar"><i class="fa-solid fa-user"></i></div>
           <div>
             <div class="stars">★★★★★</div>
             <div class="reviewer-name">Trần Phương Linh</div>
@@ -1152,35 +1155,35 @@
         </div>
         <ul class="includes-list">
           <li>
-            <span data-lang="vi">🧴 Sữa Rửa Mặt (120ml)</span>
-            <span data-lang="en">🧴 Purifying Cleanser (120ml)</span>
+            <span data-lang="vi"><i class="fa-solid fa-pump-soap"></i> Sữa Rửa Mặt (120ml)</span>
+            <span data-lang="en"><i class="fa-solid fa-pump-soap"></i> Purifying Cleanser (120ml)</span>
           </li>
           <li>
-            <span data-lang="vi">💧 Nước Thần (150ml)</span>
-            <span data-lang="en">💧 Activating Essence (150ml)</span>
+            <span data-lang="vi"><i class="fa-solid fa-droplet"></i> Nước Thần (150ml)</span>
+            <span data-lang="en"><i class="fa-solid fa-droplet"></i> Activating Essence (150ml)</span>
           </li>
           <li>
-            <span data-lang="vi">✨ Siêu Tinh Chất (30ml)</span>
-            <span data-lang="en">✨ Brightening Serum (30ml)</span>
+            <span data-lang="vi"><i class="fa-solid fa-wand-magic-sparkles"></i> Siêu Tinh Chất (30ml)</span>
+            <span data-lang="en"><i class="fa-solid fa-wand-magic-sparkles"></i> Brightening Serum (30ml)</span>
           </li>
           <li>
-            <span data-lang="vi">🌙 Kem Phục Hồi (50ml)</span>
-            <span data-lang="en">🌙 Recovery Cream (50ml)</span>
+            <span data-lang="vi"><i class="fa-solid fa-moon"></i> Kem Phục Hồi (50ml)</span>
+            <span data-lang="en"><i class="fa-solid fa-moon"></i> Recovery Cream (50ml)</span>
           </li>
           <li>
-            <span data-lang="vi">🎁 Kem Chống Nắng (30ml)</span>
-            <span data-lang="en">🎁 Sunscreen Gift (30ml)</span>
+            <span data-lang="vi"><i class="fa-solid fa-gift"></i> Kem Chống Nắng (30ml)</span>
+            <span data-lang="en"><i class="fa-solid fa-gift"></i> Sunscreen Gift (30ml)</span>
           </li>
         </ul>
       </div>
 
       <a href="#register" class="cta-btn-lg">
-        <span data-lang="vi">🌿 Đặt Hàng & Nhận Ưu Đãi Ngay</span>
-        <span data-lang="en">🌿 Order Now & Get the Deal</span>
+        <span data-lang="vi"><i class="fa-solid fa-leaf"></i> Đặt Hàng & Nhận Ưu Đãi Ngay</span>
+        <span data-lang="en"><i class="fa-solid fa-leaf"></i> Order Now & Get the Deal</span>
       </a>
       <p class="guarantee">
-        <span data-lang="vi">🔒 Cam kết hoàn tiền 30 ngày nếu không hài lòng · Giao hàng toàn quốc</span>
-        <span data-lang="en">🔒 30-day money-back guarantee · Nationwide delivery</span>
+        <span data-lang="vi"><i class="fa-solid fa-lock"></i> Cam kết hoàn tiền 30 ngày nếu không hài lòng · Giao hàng toàn quốc</span>
+        <span data-lang="en"><i class="fa-solid fa-lock"></i> 30-day money-back guarantee · Nationwide delivery</span>
       </p>
     </div>
   </div>
@@ -1248,22 +1251,22 @@
           <option value="khac">Khác / Other</option>
         </select>
         <button type="submit" class="submit-btn">
-          <span data-lang="vi">🌿 Đăng Ký Nhận Ưu Đãi Ngay</span>
-          <span data-lang="en">🌿 Register for My Special Offer</span>
+          <span data-lang="vi"><i class="fa-solid fa-leaf"></i> Đăng Ký Nhận Ưu Đãi Ngay</span>
+          <span data-lang="en"><i class="fa-solid fa-leaf"></i> Register for My Special Offer</span>
         </button>
         <p class="form-note" id="formError" role="alert" aria-live="assertive" style="color:#c0392b;display:none">
           <span data-lang="vi">Vui lòng điền đầy đủ thông tin bắt buộc.</span>
           <span data-lang="en">Please fill in all required fields.</span>
         </p>
         <p class="form-note">
-          <span data-lang="vi">🔒 Thông tin của bạn được bảo mật tuyệt đối. Không spam.</span>
-          <span data-lang="en">🔒 Your information is completely secure. No spam.</span>
+          <span data-lang="vi"><i class="fa-solid fa-lock"></i> Thông tin của bạn được bảo mật tuyệt đối. Không spam.</span>
+          <span data-lang="en"><i class="fa-solid fa-lock"></i> Your information is completely secure. No spam.</span>
         </p>
       </form>
 
       <div class="success-msg" id="successMsg">
-        <span data-lang="vi">🎉 Cảm ơn bạn đã đăng ký! Chuyên gia của chúng tôi sẽ liên hệ trong vòng 24 giờ. Mã giảm giá 15% đã được gửi vào email của bạn.</span>
-        <span data-lang="en">🎉 Thank you for registering! Our expert will contact you within 24 hours. Your 15% discount code has been sent to your email.</span>
+        <span data-lang="vi"><i class="fa-solid fa-circle-check"></i> Cảm ơn bạn đã đăng ký! Chuyên gia của chúng tôi sẽ liên hệ trong vòng 24 giờ. Mã giảm giá 15% đã được gửi vào email của bạn.</span>
+        <span data-lang="en"><i class="fa-solid fa-circle-check"></i> Thank you for registering! Our expert will contact you within 24 hours. Your 15% discount code has been sent to your email.</span>
       </div>
     </div>
   </div>
@@ -1338,8 +1341,8 @@
         <span data-lang="en">All rights reserved.</span>
       </span>
       <span>
-        <span data-lang="vi">🌿 Thiên nhiên · Khoa học · Hiệu quả</span>
-        <span data-lang="en">🌿 Nature · Science · Results</span>
+        <span data-lang="vi"><i class="fa-solid fa-leaf"></i> Thiên nhiên · Khoa học · Hiệu quả</span>
+        <span data-lang="en"><i class="fa-solid fa-leaf"></i> Nature · Science · Results</span>
       </span>
     </div>
   </div>
