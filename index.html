@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Bộ sản phẩm trị nám chuyên sâu 4 bước — ức chế melanin từ gốc, mờ nám, trả lại làn da sáng mịn tự nhiên. / Professional 4-step anti-pigmentation skincare set — inhibit melanin at the root, fade dark spots, restore naturally radiant skin." />
   <meta name="keywords" content="trị nám, skincare, anti-pigmentation, làm trắng da, serum trị nám, kem trị nám, mỹ phẩm thiên nhiên" />
-  <title>ORIA — Bộ Sản Phẩm Trị Nám Chuyên Sâu | Advanced Pigmentation Control Set</title>
+  <title>ORIA — Ang Dark Spot Treatment Set | Advanced Pigmentation Control Set</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -795,9 +795,12 @@
       </div>
 
       <div class="features-visual reveal">
-        <div class="big-stat">4 Tuần</div>
+        <div class="big-stat">
+          <span data-lang="fil">4 Linggo</span>
+          <span data-lang="en">4 Weeks</span>
+        </div>
         <div class="big-stat-label">
-          <span data-lang="fil">Makikita ang resulta / Visible results in 4 weeks</span>
+          <span data-lang="fil">Garantisadong makikita ang resulta</span>
           <span data-lang="en">Visible results guaranteed</span>
         </div>
         <div style="background:var(--white);border-radius:var(--radius-md);padding:20px;margin-top:20px">
@@ -1158,7 +1161,7 @@
             type="text"
             class="form-input"
             id="nameInput"
-            placeholder="Họ và tên / Full name"
+            placeholder="Buong pangalan"
             required
             aria-label="Full name"
             aria-describedby="formError"
@@ -1167,7 +1170,7 @@
             type="tel"
             class="form-input"
             id="phoneInput"
-            placeholder="Số điện thoại / Phone"
+            placeholder="Telepono"
             required
             aria-label="Phone number"
             aria-describedby="formError"
@@ -1178,21 +1181,19 @@
           type="email"
           class="form-input"
           id="emailInput"
-          placeholder="Email của bạn / Your email"
+          placeholder="Iyong email"
           required
           aria-label="Email address"
           aria-describedby="formError"
           pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
         />
         <select class="form-select" id="concernSelect" aria-label="Main skin concern" aria-describedby="formError">
-          <option value="" disabled selected>
-            Vấn đề chính của bạn / Main skin concern
-          </option>
-          <option value="nam">Nám / Melasma</option>
-          <option value="tan-nhang">Tàn nhang / Freckles</option>
-          <option value="dom-nau">Đốm nâu / Dark spots</option>
-          <option value="da-xin">Da xỉn màu / Dull skin</option>
-          <option value="khac">Khác / Other</option>
+          <option value="" disabled selected>Pangunahing alalahanin sa balat</option>
+          <option value="melasma">Melasma</option>
+          <option value="freckles">Mga tuldok</option>
+          <option value="dark-spots">Mga dark spot</option>
+          <option value="dull-skin">Mapurol na balat</option>
+          <option value="other">Iba pa</option>
         </select>
         <button type="submit" class="submit-btn">
           <span data-lang="fil">🌿 Mag-register para sa Deal Ngayon</span>
@@ -1304,6 +1305,20 @@
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.getElementById('btn-fil').setAttribute('aria-pressed', lang === 'fil');
     document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+
+    /* Update form placeholders */
+    var isFil = lang !== 'en';
+    document.getElementById('nameInput').placeholder  = isFil ? 'Buong pangalan'  : 'Full name';
+    document.getElementById('phoneInput').placeholder = isFil ? 'Telepono'        : 'Phone';
+    document.getElementById('emailInput').placeholder = isFil ? 'Iyong email'     : 'Your email';
+
+    /* Update select options */
+    var sel = document.getElementById('concernSelect');
+    var opts = isFil
+      ? ['Pangunahing alalahanin sa balat', 'Melasma', 'Mga tuldok', 'Mga dark spot', 'Mapurol na balat', 'Iba pa']
+      : ['Main skin concern',               'Melasma', 'Freckles',   'Dark spots',    'Dull skin',        'Other'];
+    Array.from(sel.options).forEach(function(opt, i) { opt.text = opts[i]; });
+
     try { localStorage.setItem('oria_lang', lang); } catch(e) { console.warn('localStorage unavailable:', e); }
   }
 
