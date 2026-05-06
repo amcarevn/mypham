@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bộ sản phẩm trị nám chuyên sâu 4 bước — ức chế melanin từ gốc, mờ nám, trả lại làn da sáng mịn tự nhiên. / Professional 4-step anti-pigmentation skincare set — inhibit melanin at the root, fade dark spots, restore naturally radiant skin." />
+  <meta name="keywords" content="trị nám, skincare, anti-pigmentation, làm trắng da, serum trị nám, kem trị nám, mỹ phẩm thiên nhiên" />
+  <title>LUMINAE — Bộ Sản Phẩm Trị Nám Chuyên Sâu | Advanced Pigmentation Control Set</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f7faf6;
+      color: #2d3a2e;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ===== DESIGN TOKENS ===== */
+    :root {
+      --green-50:  #f2f8f2;
+      --green-100: #e0f0e0;
+      --green-200: #c2e0c2;
+      --green-300: #8fbe8f;
+      --green-400: #5a9f5a;
+      --green-500: #3d7a3d;
+      --green-600: #2d5e2d;
+      --cream:     #faf7f2;
+      --sand:      #f0ebe0;
+      --text-dark: #1e2b1f;
+      --text-mid:  #4a5e4b;
+      --text-light:#7a927b;
+      --white:     #ffffff;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 32px;
+      --shadow-sm: 0 2px 12px rgba(61,122,61,.10);
+      --shadow-md: 0 8px 32px rgba(61,122,61,.14);
+      --shadow-lg: 0 20px 60px rgba(61,122,61,.18);
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
+    h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 300; }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; }
+    h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 600; }
+    p  { font-size: clamp(.9rem, 1.5vw, 1rem); color: var(--text-mid); }
+
+    /* ===== LAYOUT ===== */
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 80px 0; }
+
+    /* ===== LANGUAGE TOGGLE ===== */
+    #lang-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(242,248,242,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--green-200);
+      padding: 12px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 600; letter-spacing: .1em;
+      color: var(--green-500); text-decoration: none;
+    }
+    .lang-toggle {
+      display: flex; gap: 4px; align-items: center;
+      background: var(--green-100); border-radius: 99px; padding: 4px;
+    }
+    .lang-btn {
+      border: none; background: transparent;
+      padding: 6px 16px; border-radius: 99px;
+      font-family: 'DM Sans', sans-serif; font-size: .85rem; font-weight: 500;
+      cursor: pointer; transition: all .25s; color: var(--text-mid);
+    }
+    .lang-btn.active {
+      background: var(--white); color: var(--green-500);
+      box-shadow: 0 1px 6px rgba(61,122,61,.18);
+    }
+    .nav-cta {
+      background: var(--green-400); color: var(--white);
+      border: none; border-radius: 99px;
+      padding: 8px 22px; font-family: 'DM Sans', sans-serif;
+      font-size: .85rem; font-weight: 500; cursor: pointer;
+      text-decoration: none; transition: background .25s;
+    }
+    .nav-cta:hover { background: var(--green-500); }
+
+    /* ===== HERO ===== */
+    #hero {
+      padding-top: 120px;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(194,224,194,.45) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 80% at 20% 70%, rgba(224,240,224,.4) 0%, transparent 60%),
+        var(--cream);
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(143,190,143,.25) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-100); color: var(--green-500);
+      border-radius: 99px; padding: 6px 16px; font-size: .8rem; font-weight: 500;
+      letter-spacing: .08em; margin-bottom: 20px;
+    }
+    .hero-badge::before {
+      content: '🌿'; font-size: .9rem;
+    }
+    .hero-title { margin-bottom: 20px; color: var(--text-dark); }
+    .hero-title em { font-style: italic; color: var(--green-500); }
+    .hero-sub { font-size: clamp(1rem, 1.8vw, 1.15rem); margin-bottom: 36px; max-width: 500px; }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, var(--green-400), var(--green-500));
+      color: var(--white); border: none; border-radius: 99px;
+      padding: 16px 36px; font-size: 1rem; font-weight: 500;
+      cursor: pointer; text-decoration: none;
+      box-shadow: 0 6px 24px rgba(61,122,61,.35);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(61,122,61,.4); }
+    .hero-cta-arrow { font-size: 1.1rem; transition: transform .25s; }
+    .hero-cta:hover .hero-cta-arrow { transform: translateX(4px); }
+    .hero-trust {
+      display: flex; gap: 24px; margin-top: 32px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: .82rem; color: var(--text-light);
+    }
+    .trust-item span { font-size: 1rem; }
+
+    /* Hero image / product mockup */
+    .hero-visual {
+      display: flex; justify-content: center; align-items: center;
+      position: relative;
+    }
+    .product-stack {
+      position: relative; width: 340px; height: 420px;
+    }
+    .product-card {
+      position: absolute; background: var(--white);
+      border-radius: var(--radius-md); box-shadow: var(--shadow-md);
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 20px;
+      transition: transform .4s;
+    }
+    .product-card:nth-child(1) { width: 200px; height: 220px; top: 0; left: 20px; z-index: 4; background: linear-gradient(145deg,#e8f5e8,#fff); }
+    .product-card:nth-child(2) { width: 180px; height: 200px; top: 40px; left: 140px; z-index: 3; background: linear-gradient(145deg,#f0f8f0,#fff); }
+    .product-card:nth-child(3) { width: 160px; height: 180px; top: 180px; left: 10px; z-index: 2; background: linear-gradient(145deg,#e4f3e4,#fff); }
+    .product-card:nth-child(4) { width: 170px; height: 190px; top: 210px; left: 150px; z-index: 1; background: linear-gradient(145deg,#f5faf5,#fff); }
+    .product-card:hover { transform: translateY(-6px) scale(1.03); z-index: 10; }
+    .product-icon { font-size: 2.4rem; margin-bottom: 8px; }
+    .product-name { font-family: 'Cormorant Garamond', serif; font-size: .95rem; font-weight: 600; color: var(--text-dark); text-align: center; }
+    .product-step { font-size: .7rem; color: var(--green-400); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
+    .floating-leaf {
+      position: absolute; font-size: 1.8rem; animation: float 4s ease-in-out infinite;
+    }
+    .floating-leaf:nth-child(5) { top: -20px; right: -10px; animation-delay: 0s; }
+    .floating-leaf:nth-child(6) { bottom: 40px; left: -20px; animation-delay: 1.5s; }
+    .floating-leaf:nth-child(7) { top: 180px; right: -30px; animation-delay: .8s; font-size: 1.2rem; }
+    @keyframes float { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-12px) rotate(8deg); } }
+
+    /* ===== WAVE DIVIDER ===== */
+    .wave { display: block; width: 100%; overflow: hidden; line-height: 0; }
+    .wave svg { display: block; }
+
+    /* ===== STATS BAR ===== */
+    #stats {
+      background: linear-gradient(135deg, var(--green-400), var(--green-500));
+      padding: 40px 0; color: var(--white);
+    }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+    .stat-value { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 600; line-height: 1; }
+    .stat-label { font-size: .82rem; opacity: .85; margin-top: 4px; }
+
+    /* ===== PROBLEM & SOLUTION ===== */
+    #problem { background: var(--cream); }
+    .section-label {
+      font-size: .78rem; font-weight: 600; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--green-400); margin-bottom: 12px;
+    }
+    .section-title { margin-bottom: 16px; color: var(--text-dark); }
+    .section-sub { max-width: 520px; margin: 0 auto 56px; text-align: center; }
+    .problem-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .problem-card {
+      background: var(--white); border-radius: var(--radius-md);
+      padding: 36px 28px; box-shadow: var(--shadow-sm);
+      border-top: 3px solid var(--green-200);
+      transition: box-shadow .3s, transform .3s;
+    }
+    .problem-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .pain-icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
+    .pain-title { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; font-family: 'Cormorant Garamond', serif; }
+    .pain-desc { font-size: .88rem; color: var(--text-mid); margin-bottom: 16px; }
+    .solution-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--green-100); color: var(--green-500);
+      border-radius: 99px; padding: 4px 12px; font-size: .78rem; font-weight: 500;
+    }
+    .solution-tag::before { content: '✓'; font-weight: 700; }
+
+    /* ===== PRODUCTS ===== */
+    #products { background: var(--green-50); }
+    .products-header { text-align: center; margin-bottom: 56px; }
+    .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+    .step-card {
+      background: var(--white); border-radius: var(--radius-md);
+      padding: 32px 24px; box-shadow: var(--shadow-sm);
+      text-align: center; position: relative; overflow: hidden;
+      transition: box-shadow .3s, transform .3s;
+    }
+    .step-card::before {
+      content: attr(data-step);
+      position: absolute; top: -10px; right: 16px;
+      font-family: 'Cormorant Garamond', serif; font-size: 5rem;
+      font-weight: 700; color: var(--green-100); line-height: 1;
+    }
+    .step-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .step-icon { font-size: 2.8rem; margin-bottom: 16px; }
+    .step-number { font-size: .72rem; font-weight: 700; letter-spacing: .15em; color: var(--green-400); text-transform: uppercase; margin-bottom: 8px; }
+    .step-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--text-dark); margin-bottom: 12px; }
+    .step-benefits { list-style: none; text-align: left; }
+    .step-benefits li { font-size: .82rem; color: var(--text-mid); padding: 4px 0; display: flex; gap: 8px; align-items: flex-start; }
+    .step-benefits li::before { content: '🌿'; font-size: .7rem; margin-top: 3px; flex-shrink: 0; }
+
+    /* ===== FEATURES ===== */
+    #features { background: var(--cream); }
+    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .features-list { display: grid; gap: 20px; }
+    .feature-item {
+      display: flex; gap: 20px; align-items: flex-start;
+      background: var(--white); border-radius: var(--radius-md);
+      padding: 24px; box-shadow: var(--shadow-sm);
+      transition: box-shadow .3s;
+    }
+    .feature-item:hover { box-shadow: var(--shadow-md); }
+    .feature-icon-wrap {
+      width: 52px; height: 52px; flex-shrink: 0;
+      background: var(--green-100); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+    }
+    .feature-text h3 { font-size: 1.05rem; margin-bottom: 6px; color: var(--text-dark); }
+    .feature-text p { font-size: .85rem; }
+    .features-visual {
+      background: linear-gradient(145deg, var(--green-100), var(--green-50));
+      border-radius: var(--radius-lg); padding: 48px 36px;
+      box-shadow: var(--shadow-md); text-align: center;
+    }
+    .big-stat { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 300; color: var(--green-400); line-height: 1; }
+    .big-stat-label { font-size: 1rem; color: var(--text-mid); margin-top: 4px; margin-bottom: 28px; }
+    .ingredient-badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 24px; }
+    .badge {
+      background: var(--white); color: var(--green-600);
+      border-radius: 99px; padding: 6px 14px; font-size: .75rem; font-weight: 500;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    #how { background: var(--white); }
+    .how-timeline { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; }
+    .how-timeline::before {
+      content: '';
+      position: absolute; top: 36px; left: 12.5%; right: 12.5%; height: 2px;
+      background: linear-gradient(90deg, var(--green-200), var(--green-400), var(--green-200));
+    }
+    .how-step { text-align: center; padding: 0 16px; }
+    .how-circle {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-300), var(--green-400));
+      color: var(--white); display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600;
+      margin: 0 auto 20px; box-shadow: 0 4px 16px rgba(61,122,61,.3);
+    }
+    .how-step h3 { font-size: 1rem; margin-bottom: 8px; color: var(--text-dark); }
+    .how-step p { font-size: .82rem; }
+
+    /* ===== INGREDIENTS SCIENCE ===== */
+    #ingredients { background: var(--green-50); }
+    .ingredients-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .ingredient-card {
+      background: var(--white); border-radius: var(--radius-md);
+      padding: 24px; box-shadow: var(--shadow-sm);
+    }
+    .ingredient-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
+    .ingredient-science { font-size: .78rem; color: var(--green-400); font-weight: 500; margin-bottom: 8px; }
+    .ingredient-desc { font-size: .83rem; }
+
+    /* ===== TESTIMONIALS ===== */
+    #testimonials { background: var(--cream); }
+    .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .testimonial-card {
+      background: var(--white); border-radius: var(--radius-md);
+      padding: 36px; box-shadow: var(--shadow-sm);
+      position: relative; border-bottom: 3px solid var(--green-200);
+    }
+    .quote-mark {
+      font-family: 'Cormorant Garamond', serif; font-size: 5rem;
+      color: var(--green-200); line-height: .8; margin-bottom: 8px;
+    }
+    .testimonial-text { font-size: .95rem; color: var(--text-mid); font-style: italic; margin-bottom: 24px; line-height: 1.8; }
+    .reviewer { display: flex; align-items: center; gap: 14px; }
+    .reviewer-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-200), var(--green-300));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+    }
+    .reviewer-name { font-weight: 600; font-size: .92rem; color: var(--text-dark); }
+    .reviewer-detail { font-size: .78rem; color: var(--text-light); }
+    .stars { color: #f0b429; font-size: .9rem; margin-bottom: 4px; }
+    .verified { font-size: .72rem; color: var(--green-400); font-weight: 500; }
+
+    /* ===== PRICING / CTA ===== */
+    #pricing { background: linear-gradient(135deg, var(--green-500), var(--green-600)); color: var(--white); }
+    .pricing-content { text-align: center; max-width: 680px; margin: 0 auto; }
+    .pricing-content h2 { color: var(--white); margin-bottom: 16px; }
+    .pricing-content p { color: rgba(255,255,255,.85); margin-bottom: 40px; }
+    .price-box {
+      background: rgba(255,255,255,.12); border-radius: var(--radius-lg);
+      padding: 40px; margin-bottom: 32px; border: 1px solid rgba(255,255,255,.2);
+      backdrop-filter: blur(8px);
+    }
+    .price-label { font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; opacity: .8; margin-bottom: 8px; }
+    .price-main { font-family: 'Cormorant Garamond', serif; font-size: 3.6rem; font-weight: 300; line-height: 1; margin-bottom: 4px; }
+    .price-orig { font-size: 1rem; opacity: .6; text-decoration: line-through; margin-bottom: 12px; }
+    .price-save { background: #f0b429; color: #1a1a1a; border-radius: 99px; padding: 4px 14px; font-size: .82rem; font-weight: 600; display: inline-block; margin-bottom: 20px; }
+    .includes-list { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 16px; }
+    .includes-list li {
+      background: rgba(255,255,255,.15); border-radius: 99px;
+      padding: 5px 14px; font-size: .8rem;
+    }
+    .cta-btn-lg {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--white); color: var(--green-500);
+      border: none; border-radius: 99px; padding: 18px 48px;
+      font-size: 1.05rem; font-weight: 600; cursor: pointer; text-decoration: none;
+      box-shadow: 0 8px 32px rgba(0,0,0,.2); transition: transform .25s, box-shadow .25s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .cta-btn-lg:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,.28); }
+    .guarantee { font-size: .82rem; opacity: .75; margin-top: 16px; }
+
+    /* ===== EMAIL CAPTURE ===== */
+    #register {
+      background: var(--white); padding: 80px 0;
+    }
+    .register-box {
+      max-width: 600px; margin: 0 auto; text-align: center;
+    }
+    .register-box h2 { margin-bottom: 12px; color: var(--text-dark); }
+    .register-box p { margin-bottom: 36px; }
+    .register-form { display: flex; flex-direction: column; gap: 14px; }
+    .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-input {
+      width: 100%; padding: 14px 20px; border-radius: 99px;
+      border: 1.5px solid var(--green-200); background: var(--green-50);
+      font-family: 'DM Sans', sans-serif; font-size: .92rem; color: var(--text-dark);
+      outline: none; transition: border-color .25s;
+    }
+    .form-input:focus { border-color: var(--green-400); }
+    .form-input::placeholder { color: var(--text-light); }
+    .form-select {
+      width: 100%; padding: 14px 20px; border-radius: 99px;
+      border: 1.5px solid var(--green-200); background: var(--green-50);
+      font-family: 'DM Sans', sans-serif; font-size: .92rem; color: var(--text-dark);
+      outline: none; cursor: pointer; transition: border-color .25s;
+      appearance: none;
+    }
+    .form-select:focus { border-color: var(--green-400); }
+    .submit-btn {
+      background: linear-gradient(135deg, var(--green-400), var(--green-500));
+      color: var(--white); border: none; border-radius: 99px;
+      padding: 16px 36px; font-size: 1rem; font-weight: 600;
+      cursor: pointer; font-family: 'DM Sans', sans-serif;
+      box-shadow: 0 6px 24px rgba(61,122,61,.35);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(61,122,61,.4); }
+    .form-note { font-size: .78rem; color: var(--text-light); margin-top: 8px; }
+    .success-msg {
+      display: none; background: var(--green-100); color: var(--green-600);
+      border-radius: var(--radius-md); padding: 20px;
+      font-weight: 500; margin-top: 16px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--text-dark); color: rgba(255,255,255,.7);
+      padding: 48px 0 32px;
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--white); margin-bottom: 12px; }
+    .footer-tagline { font-size: .85rem; line-height: 1.7; }
+    .footer-col h4 { color: var(--white); font-size: .85rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-links a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .85rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--green-300); }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.1); margin-bottom: 20px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: .78rem; flex-wrap: wrap; gap: 8px; }
+
+    /* ===== LANGUAGE SWITCH ===== */
+    [data-lang="en"] { display: none; }
+    body.lang-en [data-lang="vi"] { display: none; }
+    body.lang-en [data-lang="en"] { display: revert; }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .problem-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: repeat(2,1fr); }
+      .features-grid { grid-template-columns: 1fr; }
+      .how-timeline { grid-template-columns: 1fr 1fr; }
+      .how-timeline::before { display: none; }
+      .ingredients-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .input-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 56px 0; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .how-timeline { grid-template-columns: 1fr; }
+      .ingredients-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================
+     NAVBAR / LANG TOGGLE
+============================= -->
+<nav id="lang-bar">
+  <a class="brand-logo" href="#">LUMINAE</a>
+  <div class="lang-toggle" role="group" aria-label="Language selector">
+    <button class="lang-btn active" id="btn-vi" onclick="setLang('vi')" aria-pressed="true">🇻🇳 Tiếng Việt</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')" aria-pressed="false">🇬🇧 English</button>
+  </div>
+  <a href="#register" class="nav-cta">
+    <span data-lang="vi">Đặt Hàng Ngay</span>
+    <span data-lang="en">Order Now</span>
+  </a>
+</nav>
+
+<!-- ============================
+     HERO
+============================= -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span data-lang="vi">Bộ trị nám chuyên sâu 4 bước — chuẩn y khoa</span>
+          <span data-lang="en">4-Step Medical-Grade Pigmentation Control System</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span data-lang="vi">Trả Lại Làn Da <em>Sáng Mịn</em><br>Không Còn Nám, Không Lo Tái Phát</span>
+          <span data-lang="en">Reveal <em>Radiant Skin</em><br>Free From Dark Spots, For Good</span>
+        </h1>
+
+        <p class="hero-sub">
+          <span data-lang="vi">Hệ thống 4 bước độc quyền — ức chế melanin từ gốc, phá vỡ cụm sắc tố hiện hữu và ngăn nám tái phát. Hiệu quả thấy rõ sau 4 tuần sử dụng.</span>
+          <span data-lang="en">A proprietary 4-step regimen that blocks melanin at the source, breaks down existing pigment clusters, and prevents recurrence. Visible results in 4 weeks.</span>
+        </p>
+
+        <a href="#register" class="hero-cta">
+          <span data-lang="vi">Nhận Bộ Sản Phẩm Ngay</span>
+          <span data-lang="en">Get Your Set Now</span>
+          <span class="hero-cta-arrow">→</span>
+        </a>
+
+        <div class="hero-trust">
+          <div class="trust-item"><span>🌿</span>
+            <span data-lang="vi">100% chiết xuất thiên nhiên</span>
+            <span data-lang="en">100% Natural Extracts</span>
+          </div>
+          <div class="trust-item"><span>🔬</span>
+            <span data-lang="vi">Kiểm nghiệm lâm sàng</span>
+            <span data-lang="en">Clinically Tested</span>
+          </div>
+          <div class="trust-item"><span>✨</span>
+            <span data-lang="vi">Không paraben · Không cồn</span>
+            <span data-lang="en">Paraben-free · Alcohol-free</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Stack Visual -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="product-stack">
+          <div class="product-card">
+            <div class="product-step">Step 01</div>
+            <div class="product-icon">🧴</div>
+            <div class="product-name">
+              <span data-lang="vi">Sữa Rửa Mặt</span>
+              <span data-lang="en">Purifying Cleanser</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-step">Step 02</div>
+            <div class="product-icon">💧</div>
+            <div class="product-name">
+              <span data-lang="vi">Nước Thần</span>
+              <span data-lang="en">Activating Essence</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-step">Step 03</div>
+            <div class="product-icon">✨</div>
+            <div class="product-name">
+              <span data-lang="vi">Siêu Tinh Chất</span>
+              <span data-lang="en">Brightening Serum</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-step">Step 04</div>
+            <div class="product-icon">🌙</div>
+            <div class="product-name">
+              <span data-lang="vi">Kem Phục Hồi</span>
+              <span data-lang="en">Recovery Cream</span>
+            </div>
+          </div>
+          <span class="floating-leaf">🍃</span>
+          <span class="floating-leaf">🌱</span>
+          <span class="floating-leaf">🍀</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<div id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="reveal">
+        <div class="stat-value">94%</div>
+        <div class="stat-label" data-lang="vi">Khách hàng thấy da sáng hơn sau 4 tuần</div>
+        <div class="stat-label" data-lang="en">Customers saw brighter skin in 4 weeks</div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="stat-value">4×</div>
+        <div class="stat-label" data-lang="vi">Mạnh hơn Hydroquinone (Hexylresorcinol)</div>
+        <div class="stat-label" data-lang="en">Stronger than Hydroquinone (Hexylresorcinol)</div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="stat-value">8h</div>
+        <div class="stat-label" data-lang="vi">Hoạt chất trị nám hoạt động bền vững</div>
+        <div class="stat-label" data-lang="en">Sustained active ingredient performance</div>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="stat-value">20+</div>
+        <div class="stat-label" data-lang="vi">Hoạt chất trị nám đẳng cấp quốc tế</div>
+        <div class="stat-label" data-lang="en">International-grade active ingredients</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     PROBLEM & SOLUTION
+============================= -->
+<section id="problem">
+  <div class="container">
+    <div class="section-label" style="text-align:center">
+      <span data-lang="vi">Nỗi Đau Của Bạn</span>
+      <span data-lang="en">Your Skin Struggles</span>
+    </div>
+    <h2 class="section-title" style="text-align:center">
+      <span data-lang="vi">Bạn Đã Thử Nhiều Thứ — Nhưng Nám Vẫn Còn Đó</span>
+      <span data-lang="en">You've Tried Everything — Yet Dark Spots Remain</span>
+    </h2>
+    <p class="section-sub">
+      <span data-lang="vi">Chúng tôi hiểu. LUMINAE được tạo ra để giải quyết đúng gốc rễ của từng vấn đề.</span>
+      <span data-lang="en">We understand. LUMINAE was formulated to address the root cause of each concern.</span>
+    </p>
+
+    <div class="problem-grid">
+      <!-- Pain 1 -->
+      <div class="problem-card reveal">
+        <span class="pain-icon">😔</span>
+        <div class="pain-title">
+          <span data-lang="vi">Nám cứ mờ rồi lại tái phát</span>
+          <span data-lang="en">Dark spots fade, then come back</span>
+        </div>
+        <p class="pain-desc">
+          <span data-lang="vi">Dùng đủ loại kem nhưng nám mờ được vài tuần lại đậm trở lại, thậm chí lan rộng hơn sau khi tiếp xúc ánh nắng.</span>
+          <span data-lang="en">You've tried dozens of creams, but spots return darker each time — especially after sun exposure.</span>
+        </p>
+        <span class="solution-tag">
+          <span data-lang="vi">Anti-Recurrence Formula ngăn tái phát từ gốc</span>
+          <span data-lang="en">Anti-Recurrence Formula stops spots at the source</span>
+        </span>
+      </div>
+      <!-- Pain 2 -->
+      <div class="problem-card reveal reveal-delay-1">
+        <span class="pain-icon">🌑</span>
+        <div class="pain-title">
+          <span data-lang="vi">Da xỉn màu, tông không đều</span>
+          <span data-lang="en">Dull, uneven skin tone</span>
+        </div>
+        <p class="pain-desc">
+          <span data-lang="vi">Da sạm, thiếu sức sống, lỗ chân lông to, vùng thâm và vùng sáng không đồng đều khiến bạn mất tự tin.</span>
+          <span data-lang="en">Sallow, lifeless skin with enlarged pores and patchy discoloration that no foundation can fully hide.</span>
+        </p>
+        <span class="solution-tag">
+          <span data-lang="vi">Luminosity Boost & Tone Correction làm đều tông da</span>
+          <span data-lang="en">Luminosity Boost & Tone Correction for even skin</span>
+        </span>
+      </div>
+      <!-- Pain 3 -->
+      <div class="problem-card reveal reveal-delay-2">
+        <span class="pain-icon">⚡</span>
+        <div class="pain-title">
+          <span data-lang="vi">Da mỏng, kích ứng với hoạt chất mạnh</span>
+          <span data-lang="en">Sensitive skin reacts to strong actives</span>
+        </div>
+        <p class="pain-desc">
+          <span data-lang="vi">Các sản phẩm trị nám thông thường dễ gây bỏng, bong tróc, đỏ da — da yếu không thể dung nạp được.</span>
+          <span data-lang="en">Typical pigmentation treatments cause burning, peeling and redness — too harsh for delicate skin.</span>
+        </p>
+        <span class="solution-tag">
+          <span data-lang="vi">Barrier Reconstruction phục hồi hàng rào da an toàn</span>
+          <span data-lang="en">Barrier Reconstruction rebuilds skin safely</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     4-STEP PRODUCT SYSTEM
+============================= -->
+<section id="products">
+  <div class="container">
+    <div class="products-header reveal">
+      <div class="section-label">
+        <span data-lang="vi">Hệ Thống 4 Bước</span>
+        <span data-lang="en">The 4-Step System</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="vi">Quy Trình Khoa Học — Mỗi Bước Đều Có Mục Đích</span>
+        <span data-lang="en">Science-Backed Routine — Every Step Has a Purpose</span>
+      </h2>
+    </div>
+
+    <div class="steps-grid">
+      <!-- Step 1 -->
+      <div class="step-card reveal" data-step="01">
+        <div class="step-icon">🧴</div>
+        <div class="step-number">Step 01 · Morning & Night</div>
+        <div class="step-name">
+          <span data-lang="vi">Sữa Rửa Mặt</span>
+          <span data-lang="en">Purifying Cleanser</span>
+        </div>
+        <ul class="step-benefits">
+          <li>
+            <span data-lang="vi">Làm sạch sâu, không phá vỡ màng ẩm tự nhiên</span>
+            <span data-lang="en">Deep cleanse without stripping natural moisture</span>
+          </li>
+          <li>
+            <span data-lang="vi">Tẩy da chết nhẹ (PHA) — mờ sắc tố bề mặt</span>
+            <span data-lang="en">Gentle PHA exfoliation — fades surface pigment</span>
+          </li>
+          <li>
+            <span data-lang="vi">Cân bằng pH 5.5, mở đường cho các bước sau</span>
+            <span data-lang="en">Balances pH 5.5 to prime skin for next steps</span>
+          </li>
+        </ul>
+      </div>
+      <!-- Step 2 -->
+      <div class="step-card reveal reveal-delay-1" data-step="02">
+        <div class="step-icon">💧</div>
+        <div class="step-number">Step 02 · After Cleansing</div>
+        <div class="step-name">
+          <span data-lang="vi">Nước Thần (Essence)</span>
+          <span data-lang="en">Activating Essence</span>
+        </div>
+        <ul class="step-benefits">
+          <li>
+            <span data-lang="vi">Mở đường dẫn tối ưu cho các hoạt chất bước 03</span>
+            <span data-lang="en">Opens pathways for maximum Step 03 absorption</span>
+          </li>
+          <li>
+            <span data-lang="vi">Cấp ẩm đa tầng, da căng mọng tức thì</span>
+            <span data-lang="en">Multi-layer hydration — instantly plump skin</span>
+          </li>
+          <li>
+            <span data-lang="vi">Galactomyces + Bifida Ferment: dưỡng sáng & phục hồi DNA</span>
+            <span data-lang="en">Galactomyces + Bifida Ferment: brighten & repair DNA</span>
+          </li>
+        </ul>
+      </div>
+      <!-- Step 3 -->
+      <div class="step-card reveal reveal-delay-2" data-step="03">
+        <div class="step-icon">✨</div>
+        <div class="step-number">Step 03 · Core Treatment</div>
+        <div class="step-name">
+          <span data-lang="vi">Siêu Tinh Chất (Serum)</span>
+          <span data-lang="en">Brightening Serum</span>
+        </div>
+        <ul class="step-benefits">
+          <li>
+            <span data-lang="vi">Ức chế Tyrosinase — ngăn sản sinh sắc tố mới</span>
+            <span data-lang="en">Inhibits Tyrosinase — stops new pigment production</span>
+          </li>
+          <li>
+            <span data-lang="vi">Phân rã cụm Melanin hiện hữu, mờ nám rõ rệt</span>
+            <span data-lang="en">Fragments existing melanin clusters, visibly fades spots</span>
+          </li>
+          <li>
+            <span data-lang="vi">Hexylresorcinol + Alpha Arbutin + Liposomal Vitamin C</span>
+            <span data-lang="en">Hexylresorcinol + Alpha Arbutin + Liposomal Vit C</span>
+          </li>
+        </ul>
+      </div>
+      <!-- Step 4 -->
+      <div class="step-card reveal reveal-delay-3" data-step="04">
+        <div class="step-icon">🌙</div>
+        <div class="step-number">Step 04 · Final Lock</div>
+        <div class="step-name">
+          <span data-lang="vi">Kem Phục Hồi</span>
+          <span data-lang="en">Recovery Cream</span>
+        </div>
+        <ul class="step-benefits">
+          <li>
+            <span data-lang="vi">Khóa dưỡng chất — hoạt chất bước 03 bền vững 8 tiếng</span>
+            <span data-lang="en">Locks actives — Step 03 stays active for 8 hours</span>
+          </li>
+          <li>
+            <span data-lang="vi">Tái tạo hàng rào bảo vệ da, làm dịu kích ứng</span>
+            <span data-lang="en">Rebuilds skin barrier, soothes irritation</span>
+          </li>
+          <li>
+            <span data-lang="vi">Ceramide Complex + Copper Tripeptide + Bakuchiol</span>
+            <span data-lang="en">Ceramide Complex + Copper Tripeptide + Bakuchiol</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     FEATURES
+============================= -->
+<section id="features">
+  <div class="container">
+    <div class="features-grid">
+      <div>
+        <div class="section-label">
+          <span data-lang="vi">Tính Năng Nổi Bật</span>
+          <span data-lang="en">Key Benefits</span>
+        </div>
+        <h2 class="section-title" style="margin-bottom:36px">
+          <span data-lang="vi">Không Chỉ Mờ Nám — Thay Đổi Hoàn Toàn Làn Da</span>
+          <span data-lang="en">Not Just Fading Spots — A Complete Skin Transformation</span>
+        </h2>
+        <div class="features-list">
+          <div class="feature-item reveal">
+            <div class="feature-icon-wrap">🧬</div>
+            <div class="feature-text">
+              <h3>
+                <span data-lang="vi">Ức Chế Melanin Từ Gốc</span>
+                <span data-lang="en">Melanin Inhibition at the Root</span>
+              </h3>
+              <p>
+                <span data-lang="vi">Bộ đôi Tranexamic Acid (5%) + Hexylresorcinol ức chế enzyme Tyrosinase triệt để, ngăn sắc tố mới hình thành trước khi chúng xuất hiện.</span>
+                <span data-lang="en">The Tranexamic Acid (5%) + Hexylresorcinol duo completely inhibits Tyrosinase, preventing new pigment before it appears.</span>
+              </p>
+            </div>
+          </div>
+          <div class="feature-item reveal reveal-delay-1">
+            <div class="feature-icon-wrap">💥</div>
+            <div class="feature-text">
+              <h3>
+                <span data-lang="vi">Phá Vỡ Sắc Tố Hiện Hữu</span>
+                <span data-lang="en">Breaking Down Existing Pigment</span>
+              </h3>
+              <p>
+                <span data-lang="vi">Glutathione + Liposomal Vitamin C phân rã các cụm melanin cứng đầu, mờ nám, tàn nhang và đốm nâu rõ rệt từ tuần thứ 2.</span>
+                <span data-lang="en">Glutathione + Liposomal Vitamin C break down stubborn melanin clusters, visibly fading spots from week 2.</span>
+              </p>
+            </div>
+          </div>
+          <div class="feature-item reveal reveal-delay-2">
+            <div class="feature-icon-wrap">🛡️</div>
+            <div class="feature-text">
+              <h3>
+                <span data-lang="vi">Phục Hồi Hàng Rào Da</span>
+                <span data-lang="en">Barrier Reconstruction</span>
+              </h3>
+              <p>
+                <span data-lang="vi">Ceramide Complex (1,3,6-II) + Madecassoside tái tạo hàng rào bảo vệ da, ngăn mất nước và giúp da chịu đựng hoạt chất tốt hơn.</span>
+                <span data-lang="en">Ceramide Complex (1,3,6-II) + Madecassoside rebuild the protective barrier, prevent moisture loss and boost active tolerance.</span>
+              </p>
+            </div>
+          </div>
+          <div class="feature-item reveal reveal-delay-3">
+            <div class="feature-icon-wrap">🔄</div>
+            <div class="feature-text">
+              <h3>
+                <span data-lang="vi">Ngăn Nám Tái Phát Bền Lâu</span>
+                <span data-lang="en">Long-Lasting Anti-Recurrence</span>
+              </h3>
+              <p>
+                <span data-lang="vi">Bakuchiol 1% + Probiotics ổn định hoạt động tế bào sắc tố và cân bằng hệ vi sinh trên da, giúp nám không quay lại ngay cả sau khi ra nắng.</span>
+                <span data-lang="en">Bakuchiol 1% + Probiotics stabilize melanocyte activity and balance the skin microbiome, keeping spots away even after sun exposure.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="features-visual reveal">
+        <div class="big-stat">4 Tuần</div>
+        <div class="big-stat-label">
+          <span data-lang="vi">Thấy rõ hiệu quả / Visible results in 4 weeks</span>
+          <span data-lang="en">Visible results guaranteed</span>
+        </div>
+        <div style="background:var(--white);border-radius:var(--radius-md);padding:20px;margin-top:20px">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--text-dark);margin-bottom:12px">
+            <span data-lang="vi">Lộ trình cải thiện</span>
+            <span data-lang="en">Improvement Timeline</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:center;gap:10px;font-size:.82rem">
+              <span style="background:var(--green-200);color:var(--green-600);border-radius:99px;padding:2px 10px;font-weight:600;white-space:nowrap">
+                <span data-lang="vi">Tuần 1-2</span>
+                <span data-lang="en">Week 1-2</span>
+              </span>
+              <span style="color:var(--text-mid)">
+                <span data-lang="vi">Da sáng hơn, se khít lỗ chân lông</span>
+                <span data-lang="en">Brighter complexion, pores tightened</span>
+              </span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:.82rem">
+              <span style="background:var(--green-300);color:var(--white);border-radius:99px;padding:2px 10px;font-weight:600;white-space:nowrap">
+                <span data-lang="vi">Tuần 3-4</span>
+                <span data-lang="en">Week 3-4</span>
+              </span>
+              <span style="color:var(--text-mid)">
+                <span data-lang="vi">Nám mờ rõ rệt, tông da đều hơn</span>
+                <span data-lang="en">Spots visibly faded, even skin tone</span>
+              </span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:.82rem">
+              <span style="background:var(--green-400);color:var(--white);border-radius:99px;padding:2px 10px;font-weight:600;white-space:nowrap">
+                <span data-lang="vi">Tuần 6-8</span>
+                <span data-lang="en">Week 6-8</span>
+              </span>
+              <span style="color:var(--text-mid)">
+                <span data-lang="vi">Da sáng đều, nám gần như biến mất</span>
+                <span data-lang="en">Radiant, near-spotless complexion</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="ingredient-badges">
+          <span class="badge">Tranexamic Acid 5%</span>
+          <span class="badge">Hexylresorcinol</span>
+          <span class="badge">Alpha Arbutin 2%</span>
+          <span class="badge">Glutathione</span>
+          <span class="badge">Ceramide 1,3,6-II</span>
+          <span class="badge">Bakuchiol 1%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     HOW IT WORKS
+============================= -->
+<section id="how">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:60px">
+      <div class="section-label">
+        <span data-lang="vi">Cơ Chế Hoạt Động</span>
+        <span data-lang="en">How It Works</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="vi">Khoa Học Đằng Sau Làn Da Sáng Đẹp</span>
+        <span data-lang="en">The Science Behind Your Radiant Skin</span>
+      </h2>
+    </div>
+    <div class="how-timeline">
+      <div class="how-step reveal">
+        <div class="how-circle">1</div>
+        <h3>
+          <span data-lang="vi">Làm Sạch & Chuẩn Bị</span>
+          <span data-lang="en">Cleanse & Prep</span>
+        </h3>
+        <p>
+          <span data-lang="vi">Loại bỏ tạp chất, tế bào chết, cân bằng pH 5.5 để da sẵn sàng hấp thụ tối đa.</span>
+          <span data-lang="en">Remove impurities, dead cells, balance pH 5.5 for maximum absorption.</span>
+        </p>
+      </div>
+      <div class="how-step reveal reveal-delay-1">
+        <div class="how-circle">2</div>
+        <h3>
+          <span data-lang="vi">Kích Hoạt Đường Dẫn</span>
+          <span data-lang="en">Activate Pathways</span>
+        </h3>
+        <p>
+          <span data-lang="vi">Essence mở kênh dẫn qua lớp sừng, giúp các đại phân tử serum thẩm thấu sâu hơn 3×.</span>
+          <span data-lang="en">Essence opens channels through the stratum corneum for 3× deeper serum penetration.</span>
+        </p>
+      </div>
+      <div class="how-step reveal reveal-delay-2">
+        <div class="how-circle">3</div>
+        <h3>
+          <span data-lang="vi">Tấn Công Sắc Tố</span>
+          <span data-lang="en">Target Pigment</span>
+        </h3>
+        <p>
+          <span data-lang="vi">Serum tập trung ức chế melanin, phân rã cụm sắc tố cũ, trả lại tông da đều mịn.</span>
+          <span data-lang="en">Serum targets melanin inhibition and breaks down existing pigment for even tone.</span>
+        </p>
+      </div>
+      <div class="how-step reveal reveal-delay-3">
+        <div class="how-circle">4</div>
+        <h3>
+          <span data-lang="vi">Khóa & Phục Hồi</span>
+          <span data-lang="en">Lock & Recover</span>
+        </h3>
+        <p>
+          <span data-lang="vi">Kem tạo màng bảo vệ, khóa dưỡng chất hoạt động 8 tiếng và tái tạo hàng rào da.</span>
+          <span data-lang="en">Cream seals actives for 8-hour action and rebuilds the protective skin barrier.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     KEY INGREDIENTS
+============================= -->
+<section id="ingredients">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px" class="reveal">
+      <div class="section-label">
+        <span data-lang="vi">Thành Phần Nổi Bật</span>
+        <span data-lang="en">Star Ingredients</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="vi">Được Chứng Minh Bởi Khoa Học</span>
+        <span data-lang="en">Proven By Science</span>
+      </h2>
+    </div>
+    <div class="ingredients-grid">
+      <div class="ingredient-card reveal">
+        <div class="ingredient-name">Hexylresorcinol</div>
+        <div class="ingredient-science">
+          <span data-lang="vi">Mạnh hơn Hydroquinone 4×</span>
+          <span data-lang="en">4× Stronger than Hydroquinone</span>
+        </div>
+        <p class="ingredient-desc">
+          <span data-lang="vi">Hoạt chất thế hệ mới giúp làm sáng da vượt trội, an toàn tuyệt đối cho da nhạy cảm.</span>
+          <span data-lang="en">Next-gen brightening active delivering superior results, completely safe for sensitive skin.</span>
+        </p>
+      </div>
+      <div class="ingredient-card reveal reveal-delay-1">
+        <div class="ingredient-name">Tranexamic Acid 5%</div>
+        <div class="ingredient-science">
+          <span data-lang="vi">Nồng độ chuẩn y khoa</span>
+          <span data-lang="en">Medical-Grade Concentration</span>
+        </div>
+        <p class="ingredient-desc">
+          <span data-lang="vi">Ức chế sắc tố từ nhiều con đường khác nhau, đồng thời giảm đỏ da do giãn mao mạch.</span>
+          <span data-lang="en">Inhibits pigment via multiple pathways while also reducing redness from broken capillaries.</span>
+        </p>
+      </div>
+      <div class="ingredient-card reveal reveal-delay-2">
+        <div class="ingredient-name">Liposomal Vitamin C</div>
+        <div class="ingredient-science">
+          <span data-lang="vi">Công nghệ bọc Liposome</span>
+          <span data-lang="en">Liposome Encapsulation Tech</span>
+        </div>
+        <p class="ingredient-desc">
+          <span data-lang="vi">Vitamin C không bị oxy hóa, thẩm thấu sâu vào hạ bì, tăng gấp đôi hiệu quả làm sáng.</span>
+          <span data-lang="en">Vitamin C stays stable, penetrates to the dermis and doubles brightening efficacy.</span>
+        </p>
+      </div>
+      <div class="ingredient-card reveal">
+        <div class="ingredient-name">Galactomyces Ferment</div>
+        <div class="ingredient-science">
+          <span data-lang="vi">Tương tự SK-II Pitera™</span>
+          <span data-lang="en">Similar to SK-II Pitera™</span>
+        </div>
+        <p class="ingredient-desc">
+          <span data-lang="vi">Men rượu thần thánh dưỡng sáng, thu nhỏ lỗ chân lông và chống lão hóa toàn diện.</span>
+          <span data-lang="en">Legendary ferment brightens, minimizes pores and provides comprehensive anti-aging.</span>
+        </p>
+      </div>
+      <div class="ingredient-card reveal reveal-delay-1">
+        <div class="ingredient-name">Ceramide Complex 1,3,6-II</div>
+        <div class="ingredient-science">
+          <span data-lang="vi">Phục hồi Skin Barrier</span>
+          <span data-lang="en">Skin Barrier Restoration</span>
+        </div>
+        <p class="ingredient-desc">
+          <span data-lang="vi">Bộ ba lipid thiết yếu hàn gắn tế bào da, ngăn mất nước xuyên biểu bì (TEWL) hiệu quả.</span>
+          <span data-lang="en">Essential lipid trio bonds skin cells together, preventing transepidermal water loss (TEWL).</span>
+        </p>
+      </div>
+      <div class="ingredient-card reveal reveal-delay-2">
+        <div class="ingredient-name">Bakuchiol 1%</div>
+        <div class="ingredient-science">
+          <span data-lang="vi">Retinol thực vật</span>
+          <span data-lang="en">Plant-Based Retinol Alternative</span>
+        </div>
+        <p class="ingredient-desc">
+          <span data-lang="vi">Tăng tốc thay mới tế bào, đẩy nám, không gây bong tróc hay nhạy cảm ánh sáng như Retinol.</span>
+          <span data-lang="en">Accelerates cell renewal and fades spots without the peeling or photosensitivity of Retinol.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     TESTIMONIALS
+============================= -->
+<section id="testimonials">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px" class="reveal">
+      <div class="section-label">
+        <span data-lang="vi">Khách Hàng Nói Gì</span>
+        <span data-lang="en">What Our Customers Say</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="vi">Kết Quả Thực Tế — Từ Những Người Phụ Nữ Như Bạn</span>
+        <span data-lang="en">Real Results — From Women Just Like You</span>
+      </h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">
+          <span data-lang="vi">Tôi đã dùng đủ loại kem trị nám trong 3 năm nhưng nám cứ mờ rồi lại đậm. Sau 6 tuần dùng bộ LUMINAE, nám của tôi mờ đến 70% và không thấy tái phát dù ra nắng nhiều. Kết cấu da cũng mịn hơn hẳn, lỗ chân lông nhỏ lại và tông da đều màu như tôi chưa từng thấy.</span>
+          <span data-lang="en">I'd used every pigmentation cream imaginable for 3 years — spots would fade then come back darker. After 6 weeks with LUMINAE, my spots have faded 70% and haven't returned despite sun exposure. Skin texture is smoother than ever, pores are smaller and my tone has never been this even.</span>
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">👩</div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div class="reviewer-name">Nguyễn Minh Thư</div>
+            <div class="reviewer-detail">
+              <span data-lang="vi">34 tuổi · Hà Nội · Dùng 8 tuần</span>
+              <span data-lang="en">Age 34 · Hanoi · Used for 8 weeks</span>
+            </div>
+            <div class="verified">
+              ✓ <span data-lang="vi">Đã xác minh mua hàng</span>
+              <span data-lang="en">Verified Purchase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="quote-mark">"</div>
+        <p class="testimonial-text">
+          <span data-lang="vi">Da tôi rất nhạy cảm và hay bị kích ứng khi dùng hoạt chất mạnh. Nhưng với LUMINAE, da tôi hoàn toàn không bị đỏ hay bong tróc. Từ tuần thứ 2 da đã sáng hơn thấy rõ. Đây là sản phẩm trị nám đầu tiên tôi dùng được liên tục mà không sợ kích ứng. Thực sự ấn tượng!</span>
+          <span data-lang="en">My skin is extremely sensitive — strong actives always cause irritation. With LUMINAE, absolutely no redness or peeling. By week 2 my skin was noticeably brighter. This is the first pigmentation regimen I've been able to use consistently without fear of a reaction. Truly impressive!</span>
+        </p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">👩‍🦱</div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div class="reviewer-name">Trần Phương Linh</div>
+            <div class="reviewer-detail">
+              <span data-lang="vi">29 tuổi · TP. Hồ Chí Minh · Dùng 5 tuần</span>
+              <span data-lang="en">Age 29 · Ho Chi Minh City · Used for 5 weeks</span>
+            </div>
+            <div class="verified">
+              ✓ <span data-lang="vi">Đã xác minh mua hàng</span>
+              <span data-lang="en">Verified Purchase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     PRICING / CTA
+============================= -->
+<section id="pricing">
+  <div class="container">
+    <div class="pricing-content">
+      <h2>
+        <span data-lang="vi">Sở Hữu Bộ Trị Nám LUMINAE Hôm Nay</span>
+        <span data-lang="en">Get Your LUMINAE Anti-Pigmentation Set Today</span>
+      </h2>
+      <p>
+        <span data-lang="vi">Đầu tư cho làn da của bạn — chứ không phải tiếp tục lãng phí tiền vào các sản phẩm kém hiệu quả.</span>
+        <span data-lang="en">Invest in your skin — stop wasting money on products that don't deliver results.</span>
+      </p>
+
+      <div class="price-box">
+        <div class="price-label">
+          <span data-lang="vi">Bộ Trị Nám Chuyên Sâu 4 Bước</span>
+          <span data-lang="en">4-Step Advanced Pigmentation Control Set</span>
+        </div>
+        <div class="price-main">1.290.000₫</div>
+        <div class="price-orig">
+          <span data-lang="vi">Giá gốc: </span>
+          <span data-lang="en">Original: </span>
+          1.780.000₫
+        </div>
+        <div class="price-save">
+          <span data-lang="vi">Tiết kiệm 490.000₫ — 28% OFF</span>
+          <span data-lang="en">Save 490,000₫ — 28% OFF</span>
+        </div>
+        <ul class="includes-list">
+          <li>
+            <span data-lang="vi">🧴 Sữa Rửa Mặt (120ml)</span>
+            <span data-lang="en">🧴 Purifying Cleanser (120ml)</span>
+          </li>
+          <li>
+            <span data-lang="vi">💧 Nước Thần (150ml)</span>
+            <span data-lang="en">💧 Activating Essence (150ml)</span>
+          </li>
+          <li>
+            <span data-lang="vi">✨ Siêu Tinh Chất (30ml)</span>
+            <span data-lang="en">✨ Brightening Serum (30ml)</span>
+          </li>
+          <li>
+            <span data-lang="vi">🌙 Kem Phục Hồi (50ml)</span>
+            <span data-lang="en">🌙 Recovery Cream (50ml)</span>
+          </li>
+          <li>
+            <span data-lang="vi">🎁 Kem Chống Nắng (30ml)</span>
+            <span data-lang="en">🎁 Sunscreen Gift (30ml)</span>
+          </li>
+        </ul>
+      </div>
+
+      <a href="#register" class="cta-btn-lg">
+        <span data-lang="vi">🌿 Đặt Hàng & Nhận Ưu Đãi Ngay</span>
+        <span data-lang="en">🌿 Order Now & Get the Deal</span>
+      </a>
+      <p class="guarantee">
+        <span data-lang="vi">🔒 Cam kết hoàn tiền 30 ngày nếu không hài lòng · Giao hàng toàn quốc</span>
+        <span data-lang="en">🔒 30-day money-back guarantee · Nationwide delivery</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     EMAIL CAPTURE / REGISTER
+============================= -->
+<section id="register">
+  <div class="container">
+    <div class="register-box">
+      <div class="section-label" style="text-align:center">
+        <span data-lang="vi">Ưu Đãi Độc Quyền</span>
+        <span data-lang="en">Exclusive Offer</span>
+      </div>
+      <h2>
+        <span data-lang="vi">Đăng Ký Nhận Tư Vấn & Ưu Đãi Đặc Biệt</span>
+        <span data-lang="en">Register for Expert Consultation & Special Offer</span>
+      </h2>
+      <p>
+        <span data-lang="vi">Để lại thông tin — chuyên gia của chúng tôi sẽ liên hệ tư vấn miễn phí và gửi mã giảm giá 15% cho đơn đầu tiên của bạn.</span>
+        <span data-lang="en">Leave your details — our skincare expert will reach out with a free consultation and send you a 15% discount code for your first order.</span>
+      </p>
+
+      <form class="register-form" id="registrationForm" onsubmit="handleSubmit(event)" novalidate aria-describedby="formError">
+        <div class="input-row">
+          <input
+            type="text"
+            class="form-input"
+            id="nameInput"
+            placeholder="Họ và tên / Full name"
+            required
+            aria-label="Full name"
+            aria-describedby="formError"
+          />
+          <input
+            type="tel"
+            class="form-input"
+            id="phoneInput"
+            placeholder="Số điện thoại / Phone"
+            required
+            aria-label="Phone number"
+            aria-describedby="formError"
+            pattern="^(0|\+84)[0-9]{9}$"
+          />
+        </div>
+        <input
+          type="email"
+          class="form-input"
+          id="emailInput"
+          placeholder="Email của bạn / Your email"
+          required
+          aria-label="Email address"
+          aria-describedby="formError"
+          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+        />
+        <select class="form-select" id="concernSelect" aria-label="Main skin concern" aria-describedby="formError">
+          <option value="" disabled selected>
+            Vấn đề chính của bạn / Main skin concern
+          </option>
+          <option value="nam">Nám / Melasma</option>
+          <option value="tan-nhang">Tàn nhang / Freckles</option>
+          <option value="dom-nau">Đốm nâu / Dark spots</option>
+          <option value="da-xin">Da xỉn màu / Dull skin</option>
+          <option value="khac">Khác / Other</option>
+        </select>
+        <button type="submit" class="submit-btn">
+          <span data-lang="vi">🌿 Đăng Ký Nhận Ưu Đãi Ngay</span>
+          <span data-lang="en">🌿 Register for My Special Offer</span>
+        </button>
+        <p class="form-note" id="formError" role="alert" aria-live="assertive" style="color:#c0392b;display:none">
+          <span data-lang="vi">Vui lòng điền đầy đủ thông tin bắt buộc.</span>
+          <span data-lang="en">Please fill in all required fields.</span>
+        </p>
+        <p class="form-note">
+          <span data-lang="vi">🔒 Thông tin của bạn được bảo mật tuyệt đối. Không spam.</span>
+          <span data-lang="en">🔒 Your information is completely secure. No spam.</span>
+        </p>
+      </form>
+
+      <div class="success-msg" id="successMsg">
+        <span data-lang="vi">🎉 Cảm ơn bạn đã đăng ký! Chuyên gia của chúng tôi sẽ liên hệ trong vòng 24 giờ. Mã giảm giá 15% đã được gửi vào email của bạn.</span>
+        <span data-lang="en">🎉 Thank you for registering! Our expert will contact you within 24 hours. Your 15% discount code has been sent to your email.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     FOOTER
+============================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">LUMINAE</div>
+        <p class="footer-tagline">
+          <span data-lang="vi">Bộ sản phẩm trị nám chuyên sâu — được nghiên cứu và phát triển với các hoạt chất đẳng cấp quốc tế, mang đến làn da sáng mịn tự nhiên bền lâu.</span>
+          <span data-lang="en">Advanced anti-pigmentation skincare system — researched and developed with internationally acclaimed active ingredients for naturally radiant, long-lasting results.</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>
+          <span data-lang="vi">Sản Phẩm</span>
+          <span data-lang="en">Products</span>
+        </h4>
+        <ul class="footer-links">
+          <li><a href="#products">
+            <span data-lang="vi">Sữa Rửa Mặt</span>
+            <span data-lang="en">Purifying Cleanser</span>
+          </a></li>
+          <li><a href="#products">
+            <span data-lang="vi">Nước Thần</span>
+            <span data-lang="en">Activating Essence</span>
+          </a></li>
+          <li><a href="#products">
+            <span data-lang="vi">Siêu Tinh Chất</span>
+            <span data-lang="en">Brightening Serum</span>
+          </a></li>
+          <li><a href="#products">
+            <span data-lang="vi">Kem Phục Hồi</span>
+            <span data-lang="en">Recovery Cream</span>
+          </a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>
+          <span data-lang="vi">Hỗ Trợ</span>
+          <span data-lang="en">Support</span>
+        </h4>
+        <ul class="footer-links">
+          <li><a href="#register">
+            <span data-lang="vi">Tư Vấn Miễn Phí</span>
+            <span data-lang="en">Free Consultation</span>
+          </a></li>
+          <li><a href="#testimonials">
+            <span data-lang="vi">Đánh Giá Khách Hàng</span>
+            <span data-lang="en">Customer Reviews</span>
+          </a></li>
+          <li><a href="#how">
+            <span data-lang="vi">Cách Sử Dụng</span>
+            <span data-lang="en">How To Use</span>
+          </a></li>
+          <li><a href="#ingredients">
+            <span data-lang="vi">Thành Phần</span>
+            <span data-lang="en">Ingredients</span>
+          </a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <span>© 2025 LUMINAE. 
+        <span data-lang="vi">Bảo lưu mọi quyền.</span>
+        <span data-lang="en">All rights reserved.</span>
+      </span>
+      <span>
+        <span data-lang="vi">🌿 Thiên nhiên · Khoa học · Hiệu quả</span>
+        <span data-lang="en">🌿 Nature · Science · Results</span>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================
+     JAVASCRIPT
+============================= -->
+<script>
+  /* ── Language Toggle ── */
+  function setLang(lang) {
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.documentElement.lang = lang === 'en' ? 'en' : 'vi';
+    document.getElementById('btn-vi').classList.toggle('active', lang === 'vi');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-vi').setAttribute('aria-pressed', lang === 'vi');
+    document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+    try { localStorage.setItem('luminae_lang', lang); } catch(e) { console.warn('localStorage unavailable:', e); }
+  }
+
+  /* Restore saved language preference */
+  (function() {
+    try {
+      var saved = localStorage.getItem('luminae_lang');
+      if (saved === 'en') setLang('en');
+    } catch(e) {}
+  })();
+
+  /* ── Scroll Reveal ── */
+  var revealEls = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(function(el) { observer.observe(el); });
+
+  /* ── Form Submission ── */
+  function handleSubmit(event) {
+    event.preventDefault();
+    var name    = document.getElementById('nameInput').value.trim();
+    var phone   = document.getElementById('phoneInput').value.trim();
+    var email   = document.getElementById('emailInput').value.trim();
+    var concern = document.getElementById('concernSelect').value;
+    var errEl   = document.getElementById('formError');
+
+    var emailValid = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(email);
+    var phoneValid = /^(0|\+84)[0-9]{9}$/.test(phone);
+
+    if (!name || !phone || !phoneValid || !email || !emailValid || !concern) {
+      errEl.style.display = 'block';
+      errEl.focus();
+      return;
+    }
+    errEl.style.display = 'none';
+
+    /* In production: replace with your actual API endpoint or form service */
+    var form = document.getElementById('registrationForm');
+    var successMsg = document.getElementById('successMsg');
+    form.style.display = 'none';
+    successMsg.style.display = 'block';
+  }
+
+  /* ── Smooth-scroll for anchor links ── */
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
