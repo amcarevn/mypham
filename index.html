@@ -1205,7 +1205,7 @@
         <span data-lang="en">Leave your details — our skincare expert will reach out with a free consultation and send you a 15% discount code for your first order.</span>
       </p>
 
-      <form class="register-form" id="registrationForm" onsubmit="handleSubmit(event)" novalidate>
+      <form class="register-form" id="registrationForm" onsubmit="handleSubmit(event)" novalidate aria-describedby="formError">
         <div class="input-row">
           <input
             type="text"
@@ -1214,6 +1214,7 @@
             placeholder="Họ và tên / Full name"
             required
             aria-label="Full name"
+            aria-describedby="formError"
           />
           <input
             type="tel"
@@ -1222,6 +1223,8 @@
             placeholder="Số điện thoại / Phone"
             required
             aria-label="Phone number"
+            aria-describedby="formError"
+            pattern="^(0|\+84)[0-9]{9}$"
           />
         </div>
         <input
@@ -1231,8 +1234,10 @@
           placeholder="Email của bạn / Your email"
           required
           aria-label="Email address"
+          aria-describedby="formError"
+          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
         />
-        <select class="form-select" id="concernSelect" aria-label="Main skin concern">
+        <select class="form-select" id="concernSelect" aria-label="Main skin concern" aria-describedby="formError">
           <option value="" disabled selected>
             Vấn đề chính của bạn / Main skin concern
           </option>
@@ -1246,7 +1251,7 @@
           <span data-lang="vi">🌿 Đăng Ký Nhận Ưu Đãi Ngay</span>
           <span data-lang="en">🌿 Register for My Special Offer</span>
         </button>
-        <p class="form-note" id="formError" style="color:#c0392b;display:none">
+        <p class="form-note" id="formError" role="alert" aria-live="assertive" style="color:#c0392b;display:none">
           <span data-lang="vi">Vui lòng điền đầy đủ thông tin bắt buộc.</span>
           <span data-lang="en">Please fill in all required fields.</span>
         </p>
@@ -1352,7 +1357,7 @@
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.getElementById('btn-vi').setAttribute('aria-pressed', lang === 'vi');
     document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
-    try { localStorage.setItem('luminae_lang', lang); } catch(e) {}
+    try { localStorage.setItem('luminae_lang', lang); } catch(e) { console.warn('localStorage unavailable:', e); }
   }
 
   /* Restore saved language preference */
@@ -1384,8 +1389,12 @@
     var concern = document.getElementById('concernSelect').value;
     var errEl   = document.getElementById('formError');
 
-    if (!name || !phone || !email || !concern) {
+    var emailValid = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(email);
+    var phoneValid = /^(0|\+84)[0-9]{9}$/.test(phone);
+
+    if (!name || !phone || !phoneValid || !email || !emailValid || !concern) {
       errEl.style.display = 'block';
+      errEl.focus();
       return;
     }
     errEl.style.display = 'none';
