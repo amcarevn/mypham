@@ -124,7 +124,7 @@
       border-radius: 50%;
     }
     .hero-grid {
-      display: grid; grid-template-columns: 1fr 1.15fr; gap: 60px; align-items: center;
+      display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center;
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
@@ -152,11 +152,15 @@
     .hero-cta-arrow { font-size: 1.1rem; transition: transform .25s; }
     .hero-cta:hover .hero-cta-arrow { transform: translateX(4px); }
     .hero-trust {
-      display: flex; gap: 24px; margin-top: 32px; flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 24px;
+      max-width: 420px;
     }
     .trust-item {
-      display: flex; align-items: center; gap: 8px;
-      font-size: .82rem; color: var(--text-light);
+      display: flex; align-items: center; gap: 10px;
+      font-size: .92rem; color: var(--text-mid);
     }
     .trust-item span { font-size: 1rem; }
 
@@ -171,6 +175,13 @@
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-lg);
       display: block;
+    }
+    .hero-product-name {
+      margin-top: 16px;
+      text-align: center;
+      font-size: .95rem;
+      color: var(--text-dark);
+      font-weight: 500;
     }
 
     /* ===== WAVE DIVIDER ===== */
@@ -527,7 +538,10 @@
 
       <!-- Product Image Visual -->
       <div class="hero-visual">
-        <img src="tron-bo-san-pham.png" alt="Bộ sản phẩm ORIA trị nám chuyên sâu 4 bước" class="product-image" />
+        <div>
+          <img src="tron-bo-san-pham.png" alt="Bộ sản phẩm ORIA trị nám chuyên sâu 4 bước" class="product-image" />
+          <div class="hero-product-name">Bộ sản phẩm ORIA trị nám chuyên sâu 4 bước</div>
+        </div>
       </div>
     </div>
   </div>
