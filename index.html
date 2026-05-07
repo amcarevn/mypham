@@ -112,24 +112,33 @@
         radial-gradient(ellipse 80% 60% at 70% 40%, rgba(212,196,120,.38) 0%, transparent 70%),
         radial-gradient(ellipse 60% 80% at 20% 70%, rgba(237,228,196,.4) 0%, transparent 60%),
         var(--cream);
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(176,160,64,.22) 0%, transparent 70%);
+      border-radius: 50%;
     }
     .hero-grid {
-      display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center;
+      display: grid; grid-template-columns: 1fr 1.15fr; gap: 60px; align-items: center;
     }
-    .hero-content { text-align: center; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--green-100); color: var(--green-500);
-      border-radius: 99px; padding: 8px 20px; font-size: .78rem; font-weight: 600;
-      letter-spacing: .1em; margin-bottom: 18px; text-transform: uppercase;
+      border-radius: 99px; padding: 6px 16px; font-size: .78rem; font-weight: 600;
+      letter-spacing: .1em; margin-bottom: 20px; text-transform: uppercase;
     }
     .hero-badge::before {
       font-family: "Font Awesome 6 Free"; font-weight: 900;
       content: '\f06c'; font-size: .9rem;
     }
-    .hero-title { margin-bottom: 20px; color: var(--text-dark); }
+    .hero-title { margin-bottom: 20px; color: var(--text-dark); letter-spacing: .01em; }
     .hero-title em { font-style: italic; color: var(--green-500); }
-    .hero-sub { font-size: clamp(1rem, 1.8vw, 1.15rem); margin: 0 auto 36px; max-width: 760px; }
+    .hero-sub { font-size: clamp(1rem, 1.8vw, 1.15rem); margin-bottom: 36px; max-width: 560px; line-height: 1.8; }
     .hero-cta {
       display: inline-flex; align-items: center; gap: 10px;
       background: linear-gradient(135deg, var(--green-400), var(--green-500));
@@ -143,38 +152,25 @@
     .hero-cta-arrow { font-size: 1.1rem; transition: transform .25s; }
     .hero-cta:hover .hero-cta-arrow { transform: translateX(4px); }
     .hero-trust {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 32px;
+      display: flex; gap: 24px; margin-top: 32px; flex-wrap: wrap;
     }
     .trust-item {
-      background: var(--white);
-      border: 1px solid rgba(122,140,0,.18);
-      border-radius: var(--radius-md);
-      padding: 20px 16px;
-      box-shadow: var(--shadow-sm);
-      text-align: center;
+      display: flex; align-items: center; gap: 8px;
+      font-size: .82rem; color: var(--text-light);
     }
-    .trust-item i {
-      font-size: 1.25rem;
-      color: var(--green-500);
-      margin-bottom: 10px;
+    .trust-item span { font-size: 1rem; }
+
+    /* Hero image / product mockup */
+    .hero-visual {
+      display: flex; justify-content: center; align-items: center;
+      position: relative;
+    }
+    .product-image {
+      width: 100%;
+      max-width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
       display: block;
-    }
-    .trust-item h3 {
-      font-family: 'Roboto', sans-serif;
-      font-size: .88rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 8px;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-    .trust-item p {
-      font-size: .82rem;
-      line-height: 1.55;
-      color: var(--text-mid);
     }
 
     /* ===== WAVE DIVIDER ===== */
@@ -441,7 +437,9 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
-      .hero-trust { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { display: flex; margin-top: 32px; }
+      .product-image { max-width: 340px; }
       .stats-grid { grid-template-columns: repeat(2,1fr); }
       .problem-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: repeat(2,1fr); }
@@ -455,7 +453,6 @@
     }
     @media (max-width: 600px) {
       section { padding: 56px 0; }
-      .hero-trust { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2,1fr); }
       .how-timeline { grid-template-columns: 1fr; }
@@ -513,51 +510,24 @@
         </a>
 
         <div class="hero-trust">
-          <div class="trust-item">
-            <i class="fas fa-shield-halved"></i>
-            <h3>
-              <span data-lang="fil">Proteksyon ng Balat</span>
-              <span data-lang="en">Skin Barrier Support</span>
-            </h3>
-            <p>
-              <span data-lang="fil">Pinananatili ang moisture at ipinapanumbalik ang ginhawa ng balat araw-araw.</span>
-              <span data-lang="en">Replenishes moisture and restores daily skin comfort.</span>
-            </p>
+          <div class="trust-item"><span><i class="fas fa-leaf"></i></span>
+            <span data-lang="fil">100% Natural na mga Ekstrak</span>
+            <span data-lang="en">100% Natural Extracts</span>
           </div>
-          <div class="trust-item">
-            <i class="fas fa-seedling"></i>
-            <h3>
-              <span data-lang="fil">Banayad na Botanikal</span>
-              <span data-lang="en">Gentle Botanical Care</span>
-            </h3>
-            <p>
-              <span data-lang="fil">Pinapakalma at pinapalakas ang balat gamit ang natural na mga sangkap.</span>
-              <span data-lang="en">Soothes and nourishes skin with naturally-derived actives.</span>
-            </p>
+          <div class="trust-item"><span><i class="fas fa-microscope"></i></span>
+            <span data-lang="fil">Nasubok sa Klinikal</span>
+            <span data-lang="en">Clinically Tested</span>
           </div>
-          <div class="trust-item">
-            <i class="fas fa-droplet"></i>
-            <h3>
-              <span data-lang="fil">Malalim na Hydration</span>
-              <span data-lang="en">Deep Hydration</span>
-            </h3>
-            <p>
-              <span data-lang="fil">Masinsinang hydration para sa mas malambot, mas makinis na kutis.</span>
-              <span data-lang="en">Layered hydration for smoother, softer, healthier-looking skin.</span>
-            </p>
-          </div>
-          <div class="trust-item">
-            <i class="fas fa-sun"></i>
-            <h3>
-              <span data-lang="fil">Natural na Kislap</span>
-              <span data-lang="en">Natural Glow</span>
-            </h3>
-            <p>
-              <span data-lang="fil">Pinapalinaw ang kutis para sa maliwanag at pantay na kinang.</span>
-              <span data-lang="en">Boosts clarity for a luminous, even-looking finish.</span>
-            </p>
+          <div class="trust-item"><span><i class="fas fa-sparkles"></i></span>
+            <span data-lang="fil">Walang Paraben · Walang Alkohol</span>
+            <span data-lang="en">Paraben-free · Alcohol-free</span>
           </div>
         </div>
+      </div>
+
+      <!-- Product Image Visual -->
+      <div class="hero-visual">
+        <img src="tron-bo-san-pham.png" alt="Bộ sản phẩm ORIA trị nám chuyên sâu 4 bước" class="product-image" />
       </div>
     </div>
   </div>
