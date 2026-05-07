@@ -158,7 +158,7 @@
       display: flex; align-items: center; gap: 8px;
       font-size: .82rem; color: var(--text-light); white-space: nowrap;
     }
-    .trust-item:not(:last-child)::after { content: "|"; margin: 0 14px; color: var(--text-light); }
+    .trust-item:not(:last-child)::after { content: "|" / ""; margin: 0 14px; color: var(--text-light); }
     .trust-item span { font-size: 1rem; }
 
     /* Hero image / product mockup */
@@ -720,7 +720,7 @@
           <span class="hero-cta-arrow">→</span>
         </a>
 
-        <div class="hero-trust">
+        <div class="hero-trust" tabindex="0">
           <div class="trust-item"><span><i class="fas fa-leaf"></i></span>
             <span data-lang="fil">100% Natural na mga Ekstrak</span>
             <span data-lang="en">100% Natural Extracts</span>
