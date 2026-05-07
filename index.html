@@ -598,6 +598,49 @@
     .reveal-delay-1 { transition-delay: .1s; }
     .reveal-delay-2 { transition-delay: .2s; }
     .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+
+    /* ===== HERO PRICE OVERLAY ===== */
+    .hero-price-overlay {
+      position: absolute;
+      bottom: 20px; right: 20px;
+      background: linear-gradient(135deg, var(--green-400), var(--green-500));
+      color: #fff;
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      text-align: center;
+      box-shadow: 0 8px 28px rgba(74,100,0,.45);
+      min-width: 140px;
+    }
+    .hero-price-overlay-label {
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      opacity: .85;
+      margin-bottom: 4px;
+    }
+    .hero-price-overlay-main {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .hero-price-overlay-orig {
+      font-size: .78rem;
+      text-decoration: line-through;
+      opacity: .65;
+      margin-top: 2px;
+    }
+    .hero-price-overlay-save {
+      margin-top: 6px;
+      background: #f0b429;
+      color: #1a1a1a;
+      border-radius: 99px;
+      padding: 2px 10px;
+      font-size: .72rem;
+      font-weight: 700;
+      display: inline-block;
+    }
 
     /* ===== ICONS ===== */
     i { color: #889110; }
@@ -696,21 +739,11 @@
       <div class="hero-visual">
         <div style="position:relative; display:inline-block; width:100%;">
           <img src="tron-bo-san-pham.png" alt="Bộ sản phẩm ORIA trị nám chuyên sâu 4 bước" class="product-image" style="border: 3px solid var(--green-200);" />
-          <div style="
-            position: absolute;
-            bottom: 20px; right: 20px;
-            background: linear-gradient(135deg, var(--green-400), var(--green-500));
-            color: #fff;
-            border-radius: var(--radius-md);
-            padding: 14px 20px;
-            text-align: center;
-            box-shadow: 0 8px 28px rgba(74,100,0,.45);
-            min-width: 140px;
-          ">
-            <div style="font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; opacity:.85; margin-bottom:4px;">Trọn Bộ 5 SP</div>
-            <div style="font-family:'Roboto',sans-serif; font-size:1.6rem; font-weight:700; line-height:1;">1.390.000 ₫</div>
-            <div style="font-size:.78rem; text-decoration:line-through; opacity:.65; margin-top:2px;">2.160.000 ₫</div>
-            <div style="margin-top:6px; background:#f0b429; color:#1a1a1a; border-radius:99px; padding:2px 10px; font-size:.72rem; font-weight:700; display:inline-block;">Tiết kiệm 28%</div>
+          <div class="hero-price-overlay">
+            <div class="hero-price-overlay-label">Trọn Bộ 5 SP</div>
+            <div class="hero-price-overlay-main">1.390.000 ₫</div>
+            <div class="hero-price-overlay-orig">2.160.000 ₫</div>
+            <div class="hero-price-overlay-save">Tiết kiệm 35%</div>
           </div>
         </div>
       </div>
@@ -764,8 +797,7 @@
           <div class="gallery-card-price">320.000 ₫<span class="gallery-card-price-orig">400.000 ₫</span></div>
         </div>
       </div>
-      <div class="gallery-card reveal reveal-delay-3">
-        <img src="./KCN (1).jpg" alt="Kem Chống Nắng (KCN)" loading="lazy" />
+      <div class="gallery-card reveal reveal-delay-4">
         <div class="gallery-card-body">
           <div class="gallery-card-name">Kem Chống Nắng</div>
           <div class="gallery-card-price">350.000 ₫<span class="gallery-card-price-orig">430.000 ₫</span></div>
@@ -782,8 +814,8 @@
       <div class="combo-info">
         <h3>Trọn Bộ 5 Sản Phẩm ORIA</h3>
         <p>
-          <span data-lang="fil">Kumpleto na sistema ng 4-hakbang para sa pinaka-epektibong paggamot ng dark spot. Kasama ang lahat ng kailangan mo para sa isang buong skincare routine.</span>
-          <span data-lang="en">Complete 4-step system for the most effective dark spot treatment. Everything you need for a full skincare routine.</span>
+          <span data-lang="fil">Kumpleto na 5 produkto para sa pinaka-epektibong paggamot ng dark spot — mula sa paglilinis hanggang proteksyon. Kasama ang lahat ng kailangan mo para sa isang buong skincare routine.</span>
+          <span data-lang="en">Complete set of 5 products for the most effective dark spot treatment — from cleansing to sun protection. Everything you need for a full skincare routine.</span>
         </p>
         <div class="combo-price-row">
           <span class="combo-price-main">1.390.000 ₫</span>
