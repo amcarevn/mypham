@@ -417,6 +417,173 @@
     .footer-divider { border: none; border-top: 1px solid rgba(42,32,16,.2); margin-bottom: 20px; }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: .78rem; flex-wrap: wrap; gap: 8px; color: var(--text-mid); }
 
+    /* ===== PRODUCT GALLERY ===== */
+    #product-gallery {
+      background: var(--cream);
+      padding: 64px 0 48px;
+    }
+    .gallery-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .gallery-heading .section-label { text-align: center; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .gallery-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      text-align: center;
+      transition: box-shadow .3s, transform .3s;
+    }
+    .gallery-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .gallery-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-card-body {
+      padding: 14px 12px 18px;
+    }
+    .gallery-card-name {
+      font-family: 'Roboto', sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .gallery-card-price {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green-500);
+    }
+    .gallery-card-price-orig {
+      font-size: .8rem;
+      color: var(--text-light);
+      text-decoration: line-through;
+      margin-left: 6px;
+    }
+
+    /* ===== COMBO HIGHLIGHT ===== */
+    .combo-highlight {
+      background: linear-gradient(135deg, var(--green-100), var(--sand));
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      box-shadow: var(--shadow-md);
+      border: 2px solid var(--green-200);
+      position: relative;
+      overflow: hidden;
+    }
+    .combo-highlight::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(176,160,64,.25) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .combo-badge {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: linear-gradient(135deg, #f0b429, #e09000);
+      color: #1a1a1a;
+      font-family: 'Roboto', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      border-radius: 99px;
+      padding: 5px 14px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .combo-image-wrap {
+      flex-shrink: 0;
+      width: 260px;
+    }
+    .combo-image-wrap img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      display: block;
+    }
+    .combo-info { flex: 1; }
+    .combo-info h3 {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .combo-info p {
+      font-size: .9rem;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+      max-width: 400px;
+    }
+    .combo-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .combo-price-main {
+      font-family: 'Roboto', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--green-500);
+      line-height: 1;
+    }
+    .combo-price-orig {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      text-decoration: line-through;
+    }
+    .combo-save-tag {
+      background: #f0b429;
+      color: #1a1a1a;
+      border-radius: 99px;
+      padding: 3px 12px;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    .combo-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--green-400), var(--green-500));
+      color: var(--white);
+      border: none;
+      border-radius: 99px;
+      padding: 14px 32px;
+      font-size: .95rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: 'Roboto', sans-serif;
+      box-shadow: 0 6px 24px rgba(74,100,0,.35);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .combo-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(74,100,0,.4); }
+
+    @media (max-width: 900px) {
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .combo-highlight { flex-direction: column; }
+      .combo-image-wrap { width: 200px; }
+    }
+    @media (max-width: 600px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .combo-image-wrap { width: 160px; }
+    }
+
     /* ===== LANGUAGE SWITCH ===== */
     [data-lang="en"] { display: none; }
     body.lang-en [data-lang="fil"] { display: none; }
@@ -431,6 +598,49 @@
     .reveal-delay-1 { transition-delay: .1s; }
     .reveal-delay-2 { transition-delay: .2s; }
     .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+
+    /* ===== HERO PRICE OVERLAY ===== */
+    .hero-price-overlay {
+      position: absolute;
+      bottom: 20px; right: 20px;
+      background: linear-gradient(135deg, var(--green-400), var(--green-500));
+      color: #fff;
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      text-align: center;
+      box-shadow: 0 8px 28px rgba(74,100,0,.45);
+      min-width: 140px;
+    }
+    .hero-price-overlay-label {
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      opacity: .85;
+      margin-bottom: 4px;
+    }
+    .hero-price-overlay-main {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .hero-price-overlay-orig {
+      font-size: .78rem;
+      text-decoration: line-through;
+      opacity: .65;
+      margin-top: 2px;
+    }
+    .hero-price-overlay-save {
+      margin-top: 6px;
+      background: #f0b429;
+      color: #1a1a1a;
+      border-radius: 99px;
+      padding: 2px 10px;
+      font-size: .72rem;
+      font-weight: 700;
+      display: inline-block;
+    }
 
     /* ===== ICONS ===== */
     i { color: #889110; }
@@ -527,7 +737,97 @@
 
       <!-- Product Image Visual -->
       <div class="hero-visual">
-        <img src="tron-bo-san-pham.png" alt="Bộ sản phẩm ORIA trị nám chuyên sâu 4 bước" class="product-image" />
+        <div style="position:relative; display:inline-block; width:100%;">
+          <img src="tron-bo-san-pham.png" alt="Bộ sản phẩm ORIA trị nám chuyên sâu 4 bước" class="product-image" style="border: 3px solid var(--green-200);" />
+          <div class="hero-price-overlay">
+            <div class="hero-price-overlay-label">Trọn Bộ 5 SP</div>
+            <div class="hero-price-overlay-main">1.390.000 ₫</div>
+            <div class="hero-price-overlay-orig">2.160.000 ₫</div>
+            <div class="hero-price-overlay-save">Tiết kiệm 35%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     PRODUCT GALLERY
+============================= -->
+<section id="product-gallery">
+  <div class="container">
+    <div class="gallery-heading reveal">
+      <div class="section-label">
+        <span data-lang="fil">Mga Produkto</span>
+        <span data-lang="en">Our Products</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="fil">Bộ Sản Phẩm ORIA</span>
+        <span data-lang="en">ORIA Product Line</span>
+      </h2>
+    </div>
+
+    <!-- 5 individual products -->
+    <div class="gallery-grid">
+      <div class="gallery-card reveal">
+        <img src="./SRM%20%281%29.png" alt="Sữa rửa mặt SPOT-FADE Cleanser" loading="lazy" />
+        <div class="gallery-card-body">
+          <div class="gallery-card-name">Sữa rửa mặt – SPOT-FADE Cleanser</div>
+          <div class="gallery-card-price">490.000 ₫</div>
+        </div>
+      </div>
+      <div class="gallery-card reveal reveal-delay-1">
+        <img src="./SERUM%20%282%29.jpg" alt="Siêu tinh chất SPOT-FADE Serum" loading="lazy" />
+        <div class="gallery-card-body">
+          <div class="gallery-card-name">Siêu tinh chất – SPOT-FADE Serum</div>
+          <div class="gallery-card-price">890.000 ₫</div>
+        </div>
+      </div>
+      <div class="gallery-card reveal reveal-delay-2">
+        <img src="./KEM%20D%C6%AF%E1%BB%A0NG%20%282%29.jpg" alt="Gel dưỡng ẩm SPOT-FADE Aqua Gel" loading="lazy" />
+        <div class="gallery-card-body">
+          <div class="gallery-card-name">Gel dưỡng ẩm – SPOT-FADE Aqua Gel</div>
+          <div class="gallery-card-price">690.000 ₫</div>
+        </div>
+      </div>
+      <div class="gallery-card reveal reveal-delay-3">
+        <img src="./N%C6%AF%E1%BB%9AC%20TH%E1%BA%A6N%20%281%29.jpg" alt="Nước thần SPOT-FADE Essence" loading="lazy" />
+        <div class="gallery-card-body">
+          <div class="gallery-card-name">Nước thần – SPOT-FADE Essence</div>
+          <div class="gallery-card-price">590.000 ₫</div>
+        </div>
+      </div>
+      <div class="gallery-card reveal reveal-delay-4">
+        <img src="./KCN%20%281%29.jpg" alt="Kem chống nắng SPOT-FADE Sunscreen" loading="lazy" />
+        <div class="gallery-card-body">
+          <div class="gallery-card-name">Kem chống nắng – SPOT-FADE Sunscreen</div>
+          <div class="gallery-card-price">490.000 ₫</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Combo highlight -->
+    <div class="combo-highlight reveal">
+      <div class="combo-badge">⭐ Bộ Combo Tiết Kiệm</div>
+      <div class="combo-image-wrap">
+        <img src="./tron-bo-san-pham.png" alt="Trọn Bộ Sản Phẩm ORIA" />
+      </div>
+      <div class="combo-info">
+        <h3>Trọn Bộ 5 Sản Phẩm ORIA</h3>
+        <p>
+          <span data-lang="fil">Kumpleto na 5 produkto para sa pinaka-epektibong paggamot ng dark spot — mula sa paglilinis hanggang proteksyon. Kasama ang lahat ng kailangan mo para sa isang buong skincare routine.</span>
+          <span data-lang="en">Complete set of 5 products for the most effective dark spot treatment — from cleansing to sun protection. Everything you need for a full skincare routine.</span>
+        </p>
+        <div class="combo-price-row">
+          <span class="combo-price-main">1.390.000 ₫</span>
+          <span class="combo-price-orig">2.160.000 ₫</span>
+          <span class="combo-save-tag">Tiết kiệm 770.000 ₫</span>
+        </div>
+        <a href="#register" class="combo-cta">
+          <span data-lang="fil">Mag-order ng Combo</span>
+          <span data-lang="en">Order Combo Set</span>
+          <span>→</span>
+        </a>
       </div>
     </div>
   </div>
