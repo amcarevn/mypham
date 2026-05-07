@@ -158,7 +158,9 @@
       display: flex; align-items: center; gap: 8px;
       font-size: .82rem; color: var(--text-light); white-space: nowrap;
     }
-    .trust-item:not(:last-child)::after { content: "|" / ""; margin: 0 14px; color: var(--text-light); }
+    .trust-item:not(:last-child)::after { content: none; }
+    .trust-sep { margin: 0 14px; color: var(--text-light); font-size: .82rem; }
+    .hero-trust:focus { outline: 2px solid var(--green-400); outline-offset: 2px; }
     .trust-item span { font-size: 1rem; }
 
     /* Hero image / product mockup */
@@ -724,11 +726,11 @@
           <div class="trust-item"><span><i class="fas fa-leaf"></i></span>
             <span data-lang="fil">100% Natural na mga Ekstrak</span>
             <span data-lang="en">100% Natural Extracts</span>
-          </div>
+          </div><span class="trust-sep" aria-hidden="true">|</span>
           <div class="trust-item"><span><i class="fas fa-microscope"></i></span>
             <span data-lang="fil">Nasubok sa Klinikal</span>
             <span data-lang="en">Clinically Tested</span>
-          </div>
+          </div><span class="trust-sep" aria-hidden="true">|</span>
           <div class="trust-item"><span><i class="fas fa-sparkles"></i></span>
             <span data-lang="fil">Walang Paraben · Walang Alkohol</span>
             <span data-lang="en">Paraben-free · Alcohol-free</span>
