@@ -152,12 +152,13 @@
     .hero-cta-arrow { font-size: 1.1rem; transition: transform .25s; }
     .hero-cta:hover .hero-cta-arrow { transform: translateX(4px); }
     .hero-trust {
-      display: flex; gap: 24px; margin-top: 32px; flex-wrap: wrap;
+      display: flex; gap: 0; margin-top: 32px; flex-wrap: nowrap;
     }
     .trust-item {
       display: flex; align-items: center; gap: 8px;
-      font-size: .82rem; color: var(--text-light);
+      font-size: .82rem; color: var(--text-light); white-space: nowrap;
     }
+    .trust-item:not(:last-child)::after { content: "|"; margin-left: 14px; color: var(--text-light); }
     .trust-item span { font-size: 1rem; }
 
     /* Hero image / product mockup */
