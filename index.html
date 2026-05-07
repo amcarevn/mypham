@@ -483,8 +483,9 @@
       background: linear-gradient(135deg, var(--green-100), var(--sand));
       border-radius: var(--radius-lg);
       padding: 40px 36px;
-      display: flex;
-      gap: 40px;
+      display: grid;
+      grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+      gap: 48px;
       align-items: center;
       box-shadow: var(--shadow-md);
       border: 2px solid var(--green-200);
@@ -512,8 +513,9 @@
       text-transform: uppercase;
     }
     .combo-image-wrap {
-      flex-shrink: 0;
-      width: 260px;
+      width: 100%;
+      max-width: 520px;
+      justify-self: center;
     }
     .combo-image-wrap img {
       width: 100%;
@@ -521,7 +523,11 @@
       box-shadow: var(--shadow-lg);
       display: block;
     }
-    .combo-info { flex: 1; }
+    .combo-info {
+      width: 100%;
+      max-width: 520px;
+      justify-self: center;
+    }
     .combo-info h3 {
       font-size: clamp(1.3rem, 2.5vw, 1.8rem);
       color: var(--text-dark);
@@ -531,7 +537,7 @@
       font-size: .9rem;
       color: var(--text-mid);
       margin-bottom: 20px;
-      max-width: 400px;
+      max-width: none;
     }
     .combo-price-row {
       display: flex;
@@ -581,12 +587,12 @@
 
     @media (max-width: 900px) {
       .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-      .combo-highlight { flex-direction: column; }
-      .combo-image-wrap { width: 200px; }
+      .combo-highlight { grid-template-columns: 1fr; gap: 28px; }
+      .combo-image-wrap { max-width: 360px; }
     }
     @media (max-width: 600px) {
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .combo-image-wrap { width: 160px; }
+      .combo-image-wrap { max-width: 300px; }
     }
 
     /* ===== LANGUAGE SWITCH ===== */
