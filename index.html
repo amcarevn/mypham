@@ -592,13 +592,12 @@
     }
     @media (max-width: 900px) {
       .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .combo-highlight { grid-template-columns: 1fr; gap: 28px; padding: 28px 22px; }
+      .combo-highlight { grid-template-columns: 1fr; gap: 28px; padding: clamp(24px, 5vw, 28px) clamp(16px, 4vw, 22px); }
       .combo-image-wrap { max-width: 360px; }
     }
     @media (max-width: 600px) {
       .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .combo-image-wrap { max-width: 300px; }
-      .combo-highlight { padding: 24px 16px; }
       .combo-price-main { font-size: 2rem; }
     }
 
