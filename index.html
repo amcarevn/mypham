@@ -602,6 +602,57 @@
       white-space: normal;
     }
     .combo-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(74,100,0,.4); }
+    .order-popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(42, 32, 16, .55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 2000;
+    }
+    .order-popup.active { display: flex; }
+    .order-popup-box {
+      width: min(100%, 460px);
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      padding: clamp(22px, 4vw, 30px);
+      position: relative;
+    }
+    .order-popup-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      color: var(--green-600);
+      background: var(--green-100);
+      font-size: 1.1rem;
+    }
+    .order-popup-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .order-popup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .order-popup-note {
+      margin-top: 12px;
+      text-align: center;
+      color: var(--green-500);
+      font-size: .88rem;
+      display: none;
+    }
     .hero-image-frame {
       position: relative;
       display: inline-block;
@@ -914,7 +965,7 @@
           <span class="combo-price-orig">$71.20</span>
           <span class="combo-save-tag">Save ~$19.60 (~28% OFF)</span>
         </div>
-        <a href="#register" class="combo-cta">
+        <a href="#register" class="combo-cta" id="comboOrderBtn">
           <span data-lang="fil">Mag-order ng Combo</span>
           <span data-lang="en">Order Combo Set</span>
           <span>→</span>
@@ -923,6 +974,20 @@
     </div>
   </div>
 </section>
+
+<div class="order-popup" id="comboOrderPopup" aria-hidden="true">
+  <div class="order-popup-box" role="dialog" aria-modal="true" aria-labelledby="comboOrderTitle">
+    <button type="button" class="order-popup-close" id="comboOrderClose" aria-label="Đóng popup">×</button>
+    <h3 class="order-popup-title" id="comboOrderTitle">ƯU ĐÃI ĐỘC QUYỀN</h3>
+    <form class="order-popup-form" id="comboOrderForm">
+      <input type="text" class="form-input" id="comboNameInput" placeholder="Họ và tên đầy đủ" required />
+      <input type="tel" class="form-input" id="comboPhoneInput" placeholder="Điện thoại" required />
+      <input type="email" class="form-input" id="comboEmailInput" placeholder="Email của bạn" required />
+      <button type="submit" class="submit-btn">Đăng ký nhận ưu đãi</button>
+    </form>
+    <p class="order-popup-note" id="comboOrderSuccess">Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm.</p>
+  </div>
+</div>
 
 <!-- Stats Bar -->
 <div id="stats">
@@ -1678,6 +1743,54 @@
     form.style.display = 'none';
     successMsg.style.display = 'block';
   }
+
+  /* ── Combo hover popup ── */
+  var comboOrderBtn = document.getElementById('comboOrderBtn');
+  var comboOrderPopup = document.getElementById('comboOrderPopup');
+  var comboOrderClose = document.getElementById('comboOrderClose');
+  var comboOrderForm = document.getElementById('comboOrderForm');
+  var comboOrderSuccess = document.getElementById('comboOrderSuccess');
+
+  function openComboPopup() {
+    comboOrderPopup.classList.add('active');
+    comboOrderPopup.setAttribute('aria-hidden', 'false');
+    comboOrderForm.style.display = 'flex';
+    comboOrderSuccess.style.display = 'none';
+  }
+
+  function closeComboPopup() {
+    comboOrderPopup.classList.remove('active');
+    comboOrderPopup.setAttribute('aria-hidden', 'true');
+  }
+
+  comboOrderBtn.addEventListener('mouseenter', function(event) {
+    event.preventDefault();
+    openComboPopup();
+  });
+
+  comboOrderBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    openComboPopup();
+  });
+
+  comboOrderClose.addEventListener('click', closeComboPopup);
+  comboOrderPopup.addEventListener('click', function(event) {
+    if (event.target === comboOrderPopup) {
+      closeComboPopup();
+    }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && comboOrderPopup.classList.contains('active')) {
+      closeComboPopup();
+    }
+  });
+
+  comboOrderForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    comboOrderForm.style.display = 'none';
+    comboOrderSuccess.style.display = 'block';
+  });
 
   /* ── Smooth-scroll for anchor links ── */
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
