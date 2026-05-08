@@ -27,7 +27,7 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
-    img, video { display: block; max-width: 100%; height: auto; }
+    img, video { max-width: 100%; height: auto; }
 
     /* ===== DESIGN TOKENS ===== */
     :root {
@@ -64,7 +64,7 @@
     .container > * { min-width: 0; }
     section { padding: clamp(52px, 7vw, 88px) 0; }
     .section-heading-center { text-align: center; }
-    .section-heading-spacious { margin-bottom: 60px; }
+    .section-heading-spacious { margin-bottom: clamp(40px, 6vw, 60px); }
 
     /* ===== LANGUAGE TOGGLE ===== */
     #lang-bar {
@@ -752,7 +752,7 @@
       #hero { padding-top: 144px; min-height: auto; }
       .hero-cta { width: 100%; justify-content: center; padding: 14px 20px; }
       .hero-trust { margin-top: 24px; justify-content: center; }
-      .trust-sep { display: none; }
+      .trust-sep { visibility: hidden; width: 0; margin: 0; }
       .steps-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2,1fr); }
       .how-timeline { grid-template-columns: 1fr; }
@@ -765,7 +765,7 @@
       .price-main,
       .big-stat { font-size: clamp(2rem, 12vw, 3rem); }
       .timeline-item { align-items: flex-start; flex-direction: column; }
-      .timeline-pill { white-space: normal; }
+      .timeline-pill { white-space: normal; flex-shrink: 1; }
       .price-box,
       .testimonial-card,
       .problem-card,
