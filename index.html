@@ -1788,9 +1788,20 @@
     openComboPopup();
   });
 
+  comboOrderBtn.addEventListener('focus', function() {
+    openComboPopup();
+  });
+
   comboOrderBtn.addEventListener('click', function(event) {
     event.preventDefault();
     openComboPopup();
+  });
+
+  comboOrderBtn.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openComboPopup();
+    }
   });
 
   comboOrderClose.addEventListener('click', closeComboPopup);
