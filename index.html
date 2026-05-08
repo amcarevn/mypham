@@ -1818,6 +1818,10 @@
   var closeOrderPopupBtn = document.getElementById('closeOrderPopup');
   var comboOrderForm = document.getElementById('comboOrderForm');
   var popupOrderError = document.getElementById('popupOrderError');
+  var popupFullNameInput = document.getElementById('popupFullName');
+  var popupPhoneInput = document.getElementById('popupPhone');
+  var popupEmailInput = document.getElementById('popupEmail');
+  var HOVER_DELAY_MS = 180;
   var hoverOpenTimer;
 
   function openOrderPopup() {
@@ -1836,7 +1840,7 @@
 
   if (comboCta && comboOrderPopup) {
     comboCta.addEventListener('mouseenter', function() {
-      hoverOpenTimer = setTimeout(openOrderPopup, 180);
+      hoverOpenTimer = setTimeout(openOrderPopup, HOVER_DELAY_MS);
     });
     comboCta.addEventListener('mouseleave', function() {
       clearTimeout(hoverOpenTimer);
@@ -1864,9 +1868,9 @@
   if (comboOrderForm) {
     comboOrderForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      var popupFullName = document.getElementById('popupFullName').value.trim();
-      var popupPhone = document.getElementById('popupPhone').value.trim();
-      var popupEmail = document.getElementById('popupEmail').value.trim();
+      var popupFullName = popupFullNameInput.value.trim();
+      var popupPhone = popupPhoneInput.value.trim();
+      var popupEmail = popupEmailInput.value.trim();
       if (!popupFullName || !popupPhone || !popupEmail) {
         if (popupOrderError) popupOrderError.style.display = 'block';
         return;
@@ -1878,7 +1882,7 @@
   }
 
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeOrderPopup();
+    if (e.key === 'Escape' && comboOrderPopup && comboOrderPopup.classList.contains('active')) closeOrderPopup();
   });
 
   /* ── Smooth-scroll for anchor links ── */
