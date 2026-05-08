@@ -149,8 +149,7 @@
     .footer-col,
     .gallery-card,
     .combo-image-wrap,
-    .combo-info,
-    .how-step { min-width: 0; }
+    .combo-info { min-width: 0; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--green-100); color: var(--green-500);
@@ -301,25 +300,6 @@
       border-radius: 99px; padding: 6px 14px; font-size: .75rem; font-weight: 500;
       box-shadow: var(--shadow-sm);
     }
-
-    /* ===== HOW IT WORKS ===== */
-    #how { background: var(--white); }
-    .how-timeline { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 0; position: relative; }
-    .how-timeline::before {
-      content: '';
-      position: absolute; top: 36px; left: 12.5%; right: 12.5%; height: 2px;
-      background: linear-gradient(90deg, var(--green-200), var(--green-400), var(--green-200));
-    }
-    .how-step { text-align: center; padding: 0 16px; }
-    .how-circle {
-      width: 72px; height: 72px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--green-300), var(--green-400));
-      color: var(--white); display: flex; align-items: center; justify-content: center;
-      font-family: 'Roboto', sans-serif; font-size: 1.6rem; font-weight: 600;
-      margin: 0 auto 20px; box-shadow: 0 4px 16px rgba(74,100,0,.3);
-    }
-    .how-step h3 { font-size: 1rem; margin-bottom: 8px; color: var(--text-dark); }
-    .how-step p { font-size: .82rem; }
 
     /* ===== INGREDIENTS SCIENCE ===== */
     #ingredients { background: var(--green-50); }
@@ -744,8 +724,6 @@
       .problem-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: repeat(2,1fr); }
       .features-grid { grid-template-columns: 1fr; }
-      .how-timeline { grid-template-columns: 1fr 1fr; }
-      .how-timeline::before { display: none; }
       .ingredients-grid { grid-template-columns: 1fr 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -767,7 +745,6 @@
       .trust-sep { opacity: 0; width: 0; margin: 0; overflow: hidden; }
       .steps-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2,1fr); }
-      .how-timeline { grid-template-columns: 1fr; }
       .ingredients-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; text-align: center; }
@@ -1220,70 +1197,6 @@
 </section>
 
 <!-- ============================
-     HOW IT WORKS
-============================= -->
-<section id="how">
-  <div class="container">
-    <div class="section-heading-center section-heading-spacious">
-      <div class="section-label">
-        <span data-lang="fil">Mekanismo ng Pagkilos</span>
-        <span data-lang="en">How It Works</span>
-      </div>
-      <h2 class="section-title">
-        <span data-lang="fil">Ang Agham sa Likod ng Maliwanag na Balat</span>
-        <span data-lang="en">The Science Behind Your Radiant Skin</span>
-      </h2>
-    </div>
-    <div class="how-timeline">
-      <div class="how-step reveal">
-        <div class="how-circle">1</div>
-        <h3>
-          <span data-lang="fil">Paglilinis at Paghahanda</span>
-          <span data-lang="en">Cleanse & Prep</span>
-        </h3>
-        <p>
-          <span data-lang="fil">Inaalis ang mga dumi, patay na selula, binabala ang pH 5.5 para maging handa ang balat para sa pinakamataas na absorption.</span>
-          <span data-lang="en">Remove impurities, dead cells, balance pH 5.5 for maximum absorption.</span>
-        </p>
-      </div>
-      <div class="how-step reveal reveal-delay-1">
-        <div class="how-circle">2</div>
-        <h3>
-          <span data-lang="fil">Pag-activate ng mga Pathway</span>
-          <span data-lang="en">Activate Pathways</span>
-        </h3>
-        <p>
-          <span data-lang="fil">Ang Essence ay nagbubukas ng mga channel sa stratum corneum, tumutulong sa malalaking molekula ng serum na tumagos nang 3× nang mas malalim.</span>
-          <span data-lang="en">Essence opens channels through the stratum corneum for 3× deeper serum penetration.</span>
-        </p>
-      </div>
-      <div class="how-step reveal reveal-delay-2">
-        <div class="how-circle">3</div>
-        <h3>
-          <span data-lang="fil">Pag-atake sa Pigment</span>
-          <span data-lang="en">Target Pigment</span>
-        </h3>
-        <p>
-          <span data-lang="fil">Ang Serum ay nakatuon sa pagpigil ng melanin, sinisira ang lumang pigment cluster, at ibinabalik ang pantay at makinis na skin tone.</span>
-          <span data-lang="en">Serum targets melanin inhibition and breaks down existing pigment for even tone.</span>
-        </p>
-      </div>
-      <div class="how-step reveal reveal-delay-3">
-        <div class="how-circle">4</div>
-        <h3>
-          <span data-lang="fil">I-lock at Magpanumbalik</span>
-          <span data-lang="en">Lock & Recover</span>
-        </h3>
-        <p>
-          <span data-lang="fil">Ang Krema ay gumagawa ng protective layer, nagla-lock ng nutrients na nagtatrabaho sa loob ng 8 oras at nagtatayo muli ng skin barrier.</span>
-          <span data-lang="en">Cream seals actives for 8-hour action and rebuilds the protective skin barrier.</span>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================
      KEY INGREDIENTS
 ============================= -->
 <section id="ingredients">
@@ -1640,10 +1553,6 @@
           <li><a href="#testimonials">
             <span data-lang="fil">Mga Review ng Customer</span>
             <span data-lang="en">Customer Reviews</span>
-          </a></li>
-          <li><a href="#how">
-            <span data-lang="fil">Paraan ng Paggamit</span>
-            <span data-lang="en">How To Use</span>
           </a></li>
           <li><a href="#ingredients">
             <span data-lang="fil">Mga Sangkap</span>
