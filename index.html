@@ -675,6 +675,13 @@
       transition: filter .2s ease;
     }
     .order-popup-submit:hover { filter: brightness(1.05); }
+    .order-popup-error {
+      font-size: .85rem;
+      color: #c0392b;
+      display: none;
+      text-align: center;
+      margin-top: 2px;
+    }
     .sr-only {
       position: absolute;
       width: 1px;
@@ -1009,12 +1016,13 @@
     <h3 class="order-popup-title" id="orderPopupTitle">ƯU ĐÃI ĐỘC QUYỀN</h3>
     <form class="order-popup-form" id="comboOrderForm">
       <label class="sr-only" for="popupFullName">Họ và tên đầy đủ</label>
-      <input class="order-popup-input" id="popupFullName" name="fullName" type="text" placeholder="Họ và tên đầy đủ" aria-label="Họ và tên đầy đủ" required />
+      <input class="order-popup-input" id="popupFullName" name="fullName" type="text" placeholder="Họ và tên đầy đủ" required />
       <label class="sr-only" for="popupPhone">Điện thoại</label>
-      <input class="order-popup-input" id="popupPhone" name="phone" type="tel" placeholder="Điện thoại" aria-label="Điện thoại" required />
+      <input class="order-popup-input" id="popupPhone" name="phone" type="tel" placeholder="Điện thoại" required />
       <label class="sr-only" for="popupEmail">Email của bạn</label>
-      <input class="order-popup-input" id="popupEmail" name="email" type="email" placeholder="Email của bạn" aria-label="Email của bạn" required />
+      <input class="order-popup-input" id="popupEmail" name="email" type="email" placeholder="Email của bạn" required />
       <button type="submit" class="order-popup-submit">Đăng ký nhận ưu đãi</button>
+      <p id="popupOrderError" class="order-popup-error" role="alert" aria-live="assertive">Vui lòng điền đầy đủ thông tin.</p>
     </form>
   </div>
 </div>
@@ -1809,22 +1817,34 @@
   var comboOrderPopup = document.getElementById('comboOrderPopup');
   var closeOrderPopupBtn = document.getElementById('closeOrderPopup');
   var comboOrderForm = document.getElementById('comboOrderForm');
+  var popupOrderError = document.getElementById('popupOrderError');
+  var hoverOpenTimer;
 
   function openOrderPopup() {
     if (!comboOrderPopup) return;
     comboOrderPopup.classList.add('active');
     comboOrderPopup.setAttribute('aria-hidden', 'false');
+    if (popupOrderError) popupOrderError.style.display = 'none';
   }
 
   function closeOrderPopup() {
     if (!comboOrderPopup) return;
     comboOrderPopup.classList.remove('active');
     comboOrderPopup.setAttribute('aria-hidden', 'true');
+    if (popupOrderError) popupOrderError.style.display = 'none';
   }
 
   if (comboCta && comboOrderPopup) {
-    comboCta.addEventListener('mouseenter', openOrderPopup);
+    comboCta.addEventListener('mouseenter', function() {
+      hoverOpenTimer = setTimeout(openOrderPopup, 180);
+    });
+    comboCta.addEventListener('mouseleave', function() {
+      clearTimeout(hoverOpenTimer);
+    });
     comboCta.addEventListener('focus', openOrderPopup);
+    comboCta.addEventListener('blur', function() {
+      clearTimeout(hoverOpenTimer);
+    });
     comboCta.addEventListener('click', function(e) {
       e.preventDefault();
       openOrderPopup();
@@ -1847,7 +1867,11 @@
       var popupFullName = document.getElementById('popupFullName').value.trim();
       var popupPhone = document.getElementById('popupPhone').value.trim();
       var popupEmail = document.getElementById('popupEmail').value.trim();
-      if (!popupFullName || !popupPhone || !popupEmail) return;
+      if (!popupFullName || !popupPhone || !popupEmail) {
+        if (popupOrderError) popupOrderError.style.display = 'block';
+        return;
+      }
+      if (popupOrderError) popupOrderError.style.display = 'none';
       comboOrderForm.reset();
       closeOrderPopup();
     });
