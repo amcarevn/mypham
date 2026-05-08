@@ -1765,7 +1765,7 @@
     successMsg.style.display = 'block';
   }
 
-  /* ── Combo hover popup ── */
+  /* ── Combo popup ── */
   var comboOrderBtn = document.getElementById('comboOrderBtn');
   var comboOrderPopup = document.getElementById('comboOrderPopup');
   var comboOrderClose = document.getElementById('comboOrderClose');
@@ -1784,24 +1784,9 @@
     comboOrderPopup.setAttribute('aria-hidden', 'true');
   }
 
-  comboOrderBtn.addEventListener('mouseenter', function() {
-    openComboPopup();
-  });
-
-  comboOrderBtn.addEventListener('focus', function() {
-    openComboPopup();
-  });
-
   comboOrderBtn.addEventListener('click', function(event) {
     event.preventDefault();
     openComboPopup();
-  });
-
-  comboOrderBtn.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      openComboPopup();
-    }
   });
 
   comboOrderClose.addEventListener('click', closeComboPopup);
