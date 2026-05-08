@@ -985,7 +985,7 @@
       <input type="email" class="form-input" id="comboEmailInput" placeholder="Email của bạn" required />
       <button type="submit" class="submit-btn">Đăng ký nhận ưu đãi</button>
     </form>
-    <p class="order-popup-note" id="comboOrderSuccess">Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm.</p>
+    <p class="order-popup-note" id="comboOrderSuccess" role="status" aria-live="polite">Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm.</p>
   </div>
 </div>
 
@@ -1764,7 +1764,6 @@
   }
 
   comboOrderBtn.addEventListener('mouseenter', function(event) {
-    event.preventDefault();
     openComboPopup();
   });
 
@@ -1790,6 +1789,7 @@
     event.preventDefault();
     comboOrderForm.style.display = 'none';
     comboOrderSuccess.style.display = 'block';
+    comboOrderForm.reset();
   });
 
   /* ── Smooth-scroll for anchor links ── */
