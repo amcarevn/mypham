@@ -978,14 +978,23 @@
 <div class="order-popup" id="comboOrderPopup" aria-hidden="true">
   <div class="order-popup-box" role="dialog" aria-modal="true" aria-labelledby="comboOrderTitle">
     <button type="button" class="order-popup-close" id="comboOrderClose" aria-label="Đóng popup">×</button>
-    <h3 class="order-popup-title" id="comboOrderTitle">ƯU ĐÃI ĐỘC QUYỀN</h3>
+    <h3 class="order-popup-title" id="comboOrderTitle">
+      <span data-lang="fil">ƯU ĐÃI ĐỘC QUYỀN</span>
+      <span data-lang="en">EXCLUSIVE OFFER</span>
+    </h3>
     <form class="order-popup-form" id="comboOrderForm">
       <input type="text" class="form-input" id="comboNameInput" placeholder="Họ và tên đầy đủ" required />
       <input type="tel" class="form-input" id="comboPhoneInput" placeholder="Điện thoại" required />
       <input type="email" class="form-input" id="comboEmailInput" placeholder="Email của bạn" required />
-      <button type="submit" class="submit-btn">Đăng ký nhận ưu đãi</button>
+      <button type="submit" class="submit-btn">
+        <span data-lang="fil">Đăng ký nhận ưu đãi</span>
+        <span data-lang="en">Register for Offer</span>
+      </button>
     </form>
-    <p class="order-popup-note" id="comboOrderSuccess" role="status" aria-live="polite">Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm.</p>
+    <p class="order-popup-note" id="comboOrderSuccess" role="status" aria-live="polite">
+      <span data-lang="fil">Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm.</span>
+      <span data-lang="en">Registration successful! We will contact you soon.</span>
+    </p>
   </div>
 </div>
 
@@ -1650,6 +1659,10 @@
       name:    'Buong pangalan',
       phone:   'Telepono',
       email:   'Iyong email',
+      comboName: 'Họ và tên đầy đủ',
+      comboPhone: 'Điện thoại',
+      comboEmail: 'Email của bạn',
+      comboClose: 'Đóng popup',
       options: {
         '':          'Pangunahing alalahanin sa balat',
         'melasma':   'Melasma',
@@ -1663,6 +1676,10 @@
       name:    'Full name',
       phone:   'Phone',
       email:   'Your email',
+      comboName: 'Full name',
+      comboPhone: 'Phone number',
+      comboEmail: 'Your email',
+      comboClose: 'Close popup',
       options: {
         '':          'Main skin concern',
         'melasma':   'Melasma',
@@ -1687,6 +1704,10 @@
     document.getElementById('nameInput').placeholder  = t.name;
     document.getElementById('phoneInput').placeholder = t.phone;
     document.getElementById('emailInput').placeholder = t.email;
+    document.getElementById('comboNameInput').placeholder = t.comboName;
+    document.getElementById('comboPhoneInput').placeholder = t.comboPhone;
+    document.getElementById('comboEmailInput').placeholder = t.comboEmail;
+    document.getElementById('comboOrderClose').setAttribute('aria-label', t.comboClose);
 
     /* Update select options */
     Array.from(document.getElementById('concernSelect').options).forEach(function(opt) {
@@ -1763,7 +1784,7 @@
     comboOrderPopup.setAttribute('aria-hidden', 'true');
   }
 
-  comboOrderBtn.addEventListener('mouseenter', function(event) {
+  comboOrderBtn.addEventListener('mouseenter', function() {
     openComboPopup();
   });
 
@@ -1787,6 +1808,7 @@
 
   comboOrderForm.addEventListener('submit', function(event) {
     event.preventDefault();
+    /* Demo success state; replace with real API submission in production. */
     comboOrderForm.style.display = 'none';
     comboOrderSuccess.style.display = 'block';
     comboOrderForm.reset();
