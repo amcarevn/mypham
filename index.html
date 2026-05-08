@@ -123,6 +123,7 @@
         radial-gradient(ellipse 80% 60% at 70% 40%, rgba(212,196,120,.38) 0%, transparent 70%),
         radial-gradient(ellipse 60% 80% at 20% 70%, rgba(237,228,196,.4) 0%, transparent 60%),
         var(--cream);
+      min-height: 100vh;
       min-height: 100svh;
       display: flex; align-items: center;
       position: relative; overflow: hidden;
@@ -753,14 +754,14 @@
       .combo-image-wrap { max-width: 360px; }
       .price-box,
       .testimonial-card,
-      .features-visual { padding-inline: clamp(20px, 5vw, 32px); }
+      .features-visual { padding-left: clamp(20px, 5vw, 32px); padding-right: clamp(20px, 5vw, 32px); }
     }
     @media (max-width: 600px) {
       #lang-bar { padding: 8px 10px; gap: 8px; }
       .lang-toggle { width: 100%; }
       .lang-btn { flex: 1; text-align: center; padding: 8px 10px; }
       .nav-cta { width: 100%; padding: 10px 16px; }
-      #hero { padding-top: var(--header-offset-mobile); min-height: max(300px, calc(100svh - var(--header-offset-mobile))); }
+      #hero { padding-top: var(--header-offset-mobile); min-height: max(300px, calc(100vh - var(--header-offset-mobile))); min-height: max(300px, calc(100svh - var(--header-offset-mobile))); }
       .hero-cta { width: 100%; justify-content: center; padding: 14px 20px; }
       .hero-trust { margin-top: 24px; justify-content: center; }
       .trust-sep { opacity: 0; width: 0; margin: 0; overflow: hidden; }
@@ -784,7 +785,7 @@
       .feature-item,
       .ingredient-card,
       .features-visual,
-      .register-box { padding-inline: clamp(18px, 5vw, 24px); }
+      .register-box { padding-left: clamp(18px, 5vw, 24px); padding-right: clamp(18px, 5vw, 24px); }
       #register { padding: 64px 0; }
     }
   </style>
