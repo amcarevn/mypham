@@ -602,6 +602,79 @@
       white-space: normal;
     }
     .combo-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(74,100,0,.4); }
+    .order-popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease;
+    }
+    .order-popup-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .order-popup {
+      width: min(100%, 480px);
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      padding: clamp(20px, 4vw, 28px);
+      position: relative;
+    }
+    .order-popup-close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      border: none;
+      background: transparent;
+      font-size: 1.4rem;
+      color: var(--text-mid);
+      cursor: pointer;
+      line-height: 1;
+    }
+    .order-popup-title {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--green-500);
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    }
+    .order-popup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .order-popup-input {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid var(--green-200);
+      border-radius: 999px;
+      background: var(--green-50);
+      font-family: 'Roboto', sans-serif;
+      font-size: .95rem;
+      outline: none;
+      transition: border-color .2s ease;
+    }
+    .order-popup-input:focus { border-color: var(--green-400); }
+    .order-popup-submit {
+      width: 100%;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--green-400), var(--green-500));
+      color: var(--white);
+      font-family: 'Roboto', sans-serif;
+      font-weight: 600;
+      font-size: .95rem;
+      cursor: pointer;
+      transition: filter .2s ease;
+    }
+    .order-popup-submit:hover { filter: brightness(1.05); }
     .hero-image-frame {
       position: relative;
       display: inline-block;
@@ -911,7 +984,7 @@
           <span class="combo-save-tag">Save ~$19.60 (~28% OFF)</span>
         </div>
         <a href="#register" class="combo-cta">
-          <span data-lang="fil">Mag-order ng Combo</span>
+          <span data-lang="fil">Đặt hàng bộ sản phẩm kết hợp</span>
           <span data-lang="en">Order Combo Set</span>
           <span>→</span>
         </a>
@@ -919,6 +992,19 @@
     </div>
   </div>
 </section>
+
+<div class="order-popup-overlay" id="comboOrderPopup" aria-hidden="true">
+  <div class="order-popup" role="dialog" aria-modal="true" aria-labelledby="orderPopupTitle">
+    <button type="button" class="order-popup-close" id="closeOrderPopup" aria-label="Đóng popup">&times;</button>
+    <h3 class="order-popup-title" id="orderPopupTitle">ƯU ĐÃI ĐỘC QUYỀN</h3>
+    <form class="order-popup-form" id="comboOrderForm">
+      <input class="order-popup-input" type="text" placeholder="Họ và tên đầy đủ" required />
+      <input class="order-popup-input" type="tel" placeholder="Điện thoại" required />
+      <input class="order-popup-input" type="email" placeholder="Email của bạn" required />
+      <button type="submit" class="order-popup-submit">Đăng ký nhận ưu đãi</button>
+    </form>
+  </div>
+</div>
 
 <!-- Stats Bar -->
 <div id="stats">
@@ -1704,6 +1790,54 @@
     form.style.display = 'none';
     successMsg.style.display = 'block';
   }
+
+  /* ── Combo Hover Popup ── */
+  var comboCta = document.querySelector('.combo-cta');
+  var comboOrderPopup = document.getElementById('comboOrderPopup');
+  var closeOrderPopupBtn = document.getElementById('closeOrderPopup');
+  var comboOrderForm = document.getElementById('comboOrderForm');
+
+  function openOrderPopup() {
+    if (!comboOrderPopup) return;
+    comboOrderPopup.classList.add('active');
+    comboOrderPopup.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeOrderPopup() {
+    if (!comboOrderPopup) return;
+    comboOrderPopup.classList.remove('active');
+    comboOrderPopup.setAttribute('aria-hidden', 'true');
+  }
+
+  if (comboCta && comboOrderPopup) {
+    comboCta.addEventListener('mouseenter', openOrderPopup);
+    comboCta.addEventListener('focus', openOrderPopup);
+    comboCta.addEventListener('click', function(e) {
+      e.preventDefault();
+      openOrderPopup();
+    });
+  }
+
+  if (closeOrderPopupBtn) {
+    closeOrderPopupBtn.addEventListener('click', closeOrderPopup);
+  }
+
+  if (comboOrderPopup) {
+    comboOrderPopup.addEventListener('click', function(e) {
+      if (e.target === comboOrderPopup) closeOrderPopup();
+    });
+  }
+
+  if (comboOrderForm) {
+    comboOrderForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      closeOrderPopup();
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeOrderPopup();
+  });
 
   /* ── Smooth-scroll for anchor links ── */
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
