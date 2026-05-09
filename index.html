@@ -135,7 +135,7 @@
       background: radial-gradient(circle, rgba(176,160,64,.22) 0%, transparent 70%);
       border-radius: 50%;
     }
-    .hero-container { max-width: 1120px; padding-inline: clamp(18px, 2.6vw, 30px); }
+    #hero .container { max-width: 1120px; padding-inline: clamp(18px, 2.6vw, 30px); }
     .hero-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
@@ -738,7 +738,7 @@
     .timeline-copy { color: var(--text-mid); }
 
     @media (max-width: 1100px) {
-      .hero-container { max-width: 1020px; }
+      #hero .container { max-width: 1020px; }
       .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(16px, 2.7vw, 26px); }
       .hero-content { max-width: 590px; }
       .gallery-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -817,9 +817,8 @@
       .lang-toggle { order: 2; }
       .nav-cta { order: 3; width: 100%; text-align: center; }
       .hero-grid { grid-template-columns: 1fr; }
-      .hero-content { text-align: center; }
-      .hero-container { max-width: 760px; }
-      .hero-content { max-width: 680px; margin-inline: auto; }
+      .hero-content { text-align: center; max-width: 680px; margin-inline: auto; }
+      #hero .container { max-width: 760px; }
       .hero-sub { margin-inline: auto; }
       .hero-visual { display: flex; margin-top: 24px; justify-content: center; }
       .product-image { max-width: min(100%, 430px); }
@@ -893,7 +892,7 @@
      HERO
 ============================= -->
 <section id="hero">
-  <div class="container hero-container">
+  <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
         <div class="hero-badge">
