@@ -135,8 +135,12 @@
       background: radial-gradient(circle, rgba(176,160,64,.22) 0%, transparent 70%);
       border-radius: 50%;
     }
+    .hero-container { max-width: 1120px; padding-inline: clamp(18px, 2.6vw, 30px); }
     .hero-grid {
-      display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 460px); gap: clamp(28px, 5vw, 60px); align-items: center;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+      gap: clamp(18px, 3vw, 34px);
+      align-items: center;
     }
     html[lang="fil"] .hero-grid { gap: 30px; }
     .hero-content,
@@ -160,9 +164,10 @@
       font-family: "Font Awesome 6 Free"; font-weight: 900;
       content: '\f06c'; font-size: .9rem;
     }
-    .hero-title { margin-bottom: 20px; color: var(--text-dark); }
+    .hero-content { max-width: 620px; }
+    .hero-title { margin-bottom: 20px; color: var(--text-dark); font-size: clamp(2.6rem, 5.1vw, 4.4rem); }
     .hero-title em { font-style: italic; color: var(--green-500); }
-    .hero-sub { font-size: clamp(1rem, 1.8vw, 1.15rem); margin-bottom: clamp(24px, 4vw, 36px); max-width: 500px; }
+    .hero-sub { font-size: clamp(1.02rem, 1.95vw, 1.2rem); margin-bottom: clamp(22px, 3vw, 32px); max-width: 610px; }
     .hero-cta {
       display: inline-flex; align-items: center; gap: 10px;
       background: linear-gradient(135deg, var(--green-400), var(--green-500));
@@ -191,12 +196,12 @@
 
     /* Hero image / product mockup */
     .hero-visual {
-      display: flex; justify-content: center; align-items: center;
+      display: flex; justify-content: flex-end; align-items: center;
       position: relative;
     }
     .product-image {
       width: 100%;
-      max-width: min(100%, 460px);
+      max-width: min(100%, 520px);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-lg);
       display: block;
@@ -698,6 +703,7 @@
       position: relative;
       display: inline-block;
       width: 100%;
+      max-width: 540px;
     }
     .timeline-card {
       background: var(--white);
@@ -732,6 +738,9 @@
     .timeline-copy { color: var(--text-mid); }
 
     @media (max-width: 1100px) {
+      .hero-container { max-width: 1020px; }
+      .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(16px, 2.7vw, 26px); }
+      .hero-content { max-width: 590px; }
       .gallery-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     }
     @media (max-width: 900px) {
@@ -809,9 +818,11 @@
       .nav-cta { order: 3; width: 100%; text-align: center; }
       .hero-grid { grid-template-columns: 1fr; }
       .hero-content { text-align: center; }
+      .hero-container { max-width: 760px; }
+      .hero-content { max-width: 680px; margin-inline: auto; }
       .hero-sub { margin-inline: auto; }
-      .hero-visual { display: flex; margin-top: 32px; }
-      .product-image { max-width: min(100%, 380px); }
+      .hero-visual { display: flex; margin-top: 24px; justify-content: center; }
+      .product-image { max-width: min(100%, 430px); }
       .stats-grid { grid-template-columns: repeat(2,1fr); }
       .problem-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: repeat(2,1fr); }
@@ -882,7 +893,7 @@
      HERO
 ============================= -->
 <section id="hero">
-  <div class="container">
+  <div class="container hero-container">
     <div class="hero-grid">
       <div class="hero-content">
         <div class="hero-badge">
