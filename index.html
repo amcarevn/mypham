@@ -882,6 +882,7 @@
   </a>
   <div class="lang-toggle" role="group" aria-label="Language selector">
     <button class="lang-btn active" id="btn-fil" onclick="setLang('fil')" aria-pressed="true"><i class="fas fa-globe"></i> Filipino</button>
+    <button class="lang-btn" id="btn-vi" onclick="setLang('vi')" aria-pressed="false"><i class="fas fa-globe"></i> Tiếng Việt</button>
     <button class="lang-btn" id="btn-en" onclick="setLang('en')" aria-pressed="false"><i class="fas fa-globe"></i> English</button>
   </div>
   <a href="#register" class="nav-cta">
@@ -1564,16 +1565,33 @@
         'dull-skin': 'Dull skin',
         'other':     'Other'
       }
+    },
+    vi: {
+      name:    'Họ và tên',
+      phone:   'Số điện thoại',
+      email:   'Email của bạn',
+      options: {
+        '':          'Vấn đề da chính',
+        'melasma':   'Nám',
+        'freckles':  'Tàn nhang',
+        'dark-spots':'Đốm nâu',
+        'dull-skin': 'Da xỉn màu',
+        'other':     'Khác'
+      }
     }
   };
 
   function setLang(lang) {
-    document.body.classList.toggle('lang-en', lang === 'en');
-    document.documentElement.lang = lang === 'en' ? 'en' : 'fil';
+    var isEn = lang === 'en';
+    var isVi = lang === 'vi';
+    document.body.classList.toggle('lang-en', isEn);
+    document.documentElement.lang = isEn ? 'en' : (isVi ? 'vi' : 'fil');
     document.getElementById('btn-fil').classList.toggle('active', lang === 'fil');
-    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-vi').classList.toggle('active', isVi);
+    document.getElementById('btn-en').classList.toggle('active', isEn);
     document.getElementById('btn-fil').setAttribute('aria-pressed', lang === 'fil');
-    document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+    document.getElementById('btn-vi').setAttribute('aria-pressed', isVi);
+    document.getElementById('btn-en').setAttribute('aria-pressed', isEn);
 
     /* Update form placeholders */
     var t = FORM_TRANSLATIONS[lang] || FORM_TRANSLATIONS['fil'];
@@ -1595,7 +1613,7 @@
   (function() {
     try {
       var saved = localStorage.getItem('oria_lang');
-      if (saved === 'en') setLang('en');
+      if (saved === 'en' || saved === 'vi') setLang(saved);
     } catch(e) {}
   })();
 
