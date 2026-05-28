@@ -881,9 +881,9 @@
     <img src="./Untitled-1.png" alt="ORIA" />
   </a>
   <div class="lang-toggle" role="group" aria-label="Language selector">
-    <button class="lang-btn active" id="btn-fil" onclick="setLang('fil')" aria-pressed="true"><i class="fas fa-globe"></i> Filipino</button>
-    <button class="lang-btn" id="btn-vi" onclick="setLang('vi')" aria-pressed="false"><i class="fas fa-globe"></i> Tiếng Việt</button>
-    <button class="lang-btn" id="btn-en" onclick="setLang('en')" aria-pressed="false"><i class="fas fa-globe"></i> English</button>
+    <button class="lang-btn active" id="btn-fil" onclick="setLang('fil')" aria-pressed="true" aria-label="Switch to Filipino"><i class="fas fa-globe"></i> Filipino</button>
+    <button class="lang-btn" id="btn-vi" onclick="setLang('vi')" aria-pressed="false" aria-label="Chuyển sang tiếng Việt"><i class="fas fa-globe"></i> Tiếng Việt</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')" aria-pressed="false" aria-label="Switch to English"><i class="fas fa-globe"></i> English</button>
   </div>
   <a href="#register" class="nav-cta">
     <span data-lang="fil">Mag-order Na</span>
@@ -1585,6 +1585,7 @@
     var isEn = lang === 'en';
     var isVi = lang === 'vi';
     document.body.classList.toggle('lang-en', isEn);
+    document.body.classList.toggle('lang-vi', isVi);
     document.documentElement.lang = isEn ? 'en' : (isVi ? 'vi' : 'fil');
     document.getElementById('btn-fil').classList.toggle('active', lang === 'fil');
     document.getElementById('btn-vi').classList.toggle('active', isVi);
