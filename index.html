@@ -22,8 +22,8 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Roboto', sans-serif;
-      background: #f7f4e2;
-      color: #2a2010;
+      background: #fff3f8;
+      color: #4f1f34;
       line-height: 1.7;
       overflow-x: hidden;
     }
@@ -31,26 +31,26 @@
 
     /* ===== DESIGN TOKENS ===== */
     :root {
-      --green-50:  #f7f4e2;
-      --green-100: #ede8be;
-      --green-200: #d4c478;
-      --green-300: #b0a040;
-      --green-400: #7a8c00;
-      --green-500: #4a6400;
-      --green-600: #324e01;
-      --cream:     #faf5e4;
-      --sand:      #ede4c4;
-      --text-dark: #2a2010;
-      --text-mid:  #5c5530;
-      --text-light:#8a8050;
+      --green-50:  #fff1f7;
+      --green-100: #ffd8e8;
+      --green-200: #f7b1ce;
+      --green-300: #ee84b1;
+      --green-400: #d95792;
+      --green-500: #b93b74;
+      --green-600: #8d2455;
+      --cream:     #fff7fb;
+      --sand:      #ffe4f0;
+      --text-dark: #4f1f34;
+      --text-mid:  #7d4c63;
+      --text-light:#ab7690;
       --white:     #ffffff;
       --radius-sm: 8px;
       --radius-md: 16px;
       --radius-lg: 32px;
       --header-offset-mobile: 144px;
-      --shadow-sm: 0 2px 12px rgba(74,100,0,.12);
-      --shadow-md: 0 8px 32px rgba(74,100,0,.16);
-      --shadow-lg: 0 20px 60px rgba(74,100,0,.22);
+      --shadow-sm: 0 2px 12px rgba(185,59,116,.12);
+      --shadow-md: 0 8px 32px rgba(185,59,116,.16);
+      --shadow-lg: 0 20px 60px rgba(185,59,116,.22);
     }
 
     /* ===== TYPOGRAPHY ===== */
@@ -70,7 +70,7 @@
     /* ===== LANGUAGE TOGGLE ===== */
     #lang-bar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      background: #e9edd8;
+      background: #ffe8f2;
       border-bottom: 1px solid var(--green-200);
       padding: 12px 24px;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -100,7 +100,7 @@
     }
     .lang-btn.active {
       background: var(--white); color: var(--green-500);
-      box-shadow: 0 1px 6px rgba(74,100,0,.18);
+      box-shadow: 0 1px 6px rgba(185,59,116,.18);
     }
     .lang-btn i,
     [data-lang] > i { margin-right: 6px; }
@@ -120,8 +120,8 @@
     #hero {
       padding-top: clamp(104px, 14vw, 128px);
       background:
-        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(212,196,120,.38) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 80% at 20% 70%, rgba(237,228,196,.4) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(247,177,206,.42) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 80% at 20% 70%, rgba(255,228,240,.55) 0%, transparent 60%),
         var(--cream);
       min-height: 100vh;
       min-height: 100svh;
@@ -132,7 +132,7 @@
       content: '';
       position: absolute; top: -80px; right: -80px;
       width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(176,160,64,.22) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(217,87,146,.22) 0%, transparent 70%);
       border-radius: 50%;
     }
     #hero .container { max-width: 1120px; padding-inline: clamp(18px, 2.6vw, 30px); }
@@ -178,13 +178,13 @@
       color: var(--white); border: none; border-radius: 99px;
       padding: 16px 36px; font-size: 1rem; font-weight: 500;
       cursor: pointer; text-decoration: none;
-      box-shadow: 0 6px 24px rgba(74,100,0,.35);
+      box-shadow: 0 6px 24px rgba(185,59,116,.35);
       transition: transform .25s, box-shadow .25s;
       max-width: 100%;
       text-align: center;
       white-space: normal;
     }
-    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(74,100,0,.4); }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(185,59,116,.4); }
     .hero-cta-arrow { font-size: 1.1rem; transition: transform .25s; }
     .hero-cta:hover .hero-cta-arrow { transform: translateX(4px); }
     .hero-trust {
@@ -343,7 +343,7 @@
     }
     .reviewer-name { font-weight: 600; font-size: .92rem; color: var(--text-dark); }
     .reviewer-detail { font-size: .78rem; color: var(--text-light); }
-    .stars { color: #889110; font-size: .9rem; margin-bottom: 4px; }
+    .stars { color: #d95792; font-size: .9rem; margin-bottom: 4px; }
     .verified { font-size: .72rem; color: var(--green-400); font-weight: 500; }
 
     /* ===== PRICING / CTA ===== */
@@ -359,7 +359,7 @@
     .price-label { font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; opacity: .8; margin-bottom: 8px; }
     .price-main { font-family: 'Roboto', sans-serif; font-size: 3.6rem; font-weight: 300; line-height: 1; margin-bottom: 4px; }
     .price-orig { font-size: 1rem; opacity: .6; text-decoration: line-through; margin-bottom: 12px; }
-    .price-save { background: #f0b429; color: #1a1a1a; border-radius: 99px; padding: 4px 14px; font-size: .82rem; font-weight: 600; display: inline-block; margin-bottom: 20px; }
+    .price-save { background: #ffd9e9; color: var(--green-600); border-radius: 99px; padding: 4px 14px; font-size: .82rem; font-weight: 600; display: inline-block; margin-bottom: 20px; }
     .includes-list { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 16px; }
     .includes-list li {
       background: rgba(255,255,255,.15); border-radius: 99px;
@@ -411,12 +411,12 @@
       color: var(--white); border: none; border-radius: 99px;
       padding: 16px 36px; font-size: 1rem; font-weight: 600;
       cursor: pointer; font-family: 'Roboto', sans-serif;
-      box-shadow: 0 6px 24px rgba(74,100,0,.35);
+      box-shadow: 0 6px 24px rgba(185,59,116,.35);
       transition: transform .25s, box-shadow .25s;
       max-width: 100%;
       text-align: center;
     }
-    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(74,100,0,.4); }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(185,59,116,.4); }
     .form-note { font-size: .78rem; color: var(--text-light); margin-top: 8px; }
     .success-msg {
       display: none; background: var(--green-100); color: var(--green-600);
@@ -424,12 +424,18 @@
       font-weight: 500; margin-top: 16px;
     }
 
-    /* ===== FOOTER ===== */
+    /* ===== FOOTER / FOOD PICKER ===== */
     footer {
-      background: #e9edd8; color: var(--text-dark);
+      background: #ffe8f2; color: var(--text-dark);
       padding: 48px 0 32px;
     }
-    .footer-grid { display: grid; grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .food-footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+      gap: 32px;
+      align-items: stretch;
+      margin-bottom: 40px;
+    }
     .footer-brand { margin-bottom: 12px; }
     .footer-brand img {
       display: block;
@@ -437,12 +443,126 @@
       height: auto;
       object-fit: contain;
     }
-    .footer-tagline { font-size: .85rem; line-height: 1.7; color: var(--text-mid); }
-    .footer-col h4 { color: var(--text-dark); font-size: .85rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .footer-links a { color: var(--text-mid); text-decoration: none; font-size: .85rem; transition: color .2s; }
-    .footer-links a:hover { color: var(--green-500); }
-    .footer-divider { border: none; border-top: 1px solid rgba(42,32,16,.2); margin-bottom: 20px; }
+    .food-footer-copy,
+    .food-recommender {
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(217,87,146,.18);
+      border-radius: var(--radius-lg);
+      padding: clamp(24px, 4vw, 32px);
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(10px);
+    }
+    .food-footer-copy { position: relative; overflow: hidden; }
+    .food-footer-copy::after {
+      content: '';
+      position: absolute;
+      inset: auto -50px -60px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217,87,146,.18) 0%, transparent 72%);
+      pointer-events: none;
+    }
+    .food-footer-label {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--green-500);
+      margin-bottom: 10px;
+    }
+    .food-footer-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--text-dark);
+      margin-bottom: 14px;
+    }
+    .footer-tagline { font-size: .92rem; line-height: 1.8; color: var(--text-mid); }
+    .food-chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .food-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--green-600);
+      font-size: .82rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-sm);
+    }
+    .food-controls { display: grid; gap: 12px; margin-bottom: 18px; }
+    .food-label { font-size: .84rem; font-weight: 600; color: var(--text-dark); }
+    .food-select {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1.5px solid var(--green-200);
+      background: var(--white);
+      color: var(--text-dark);
+      font-family: 'Roboto', sans-serif;
+      font-size: .94rem;
+      outline: none;
+      cursor: pointer;
+    }
+    .food-select:focus { border-color: var(--green-400); }
+    .food-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      border: none;
+      border-radius: 999px;
+      padding: 15px 18px;
+      background: linear-gradient(135deg, var(--green-400), var(--green-500));
+      color: var(--white);
+      font-family: 'Roboto', sans-serif;
+      font-size: .96rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(185,59,116,.28);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .food-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(185,59,116,.34); }
+    .food-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,241,247,.96));
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1px solid rgba(217,87,146,.16);
+      min-height: 260px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+    .food-card-kicker {
+      font-size: .76rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--green-500);
+      font-weight: 700;
+    }
+    .food-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      color: var(--text-dark);
+      line-height: 1.15;
+    }
+    .food-card-desc { font-size: .94rem; color: var(--text-mid); }
+    .food-meta { display: grid; gap: 10px; }
+    .food-meta-item {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: .84rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .food-meta-item strong { color: var(--text-dark); }
+    .footer-divider { border: none; border-top: 1px solid rgba(79,31,52,.12); margin-bottom: 20px; }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: .78rem; flex-wrap: wrap; gap: 8px; color: var(--text-mid); }
 
     /* ===== PRODUCT GALLERY ===== */
@@ -521,14 +641,14 @@
       content: '';
       position: absolute; top: -60px; right: -60px;
       width: 220px; height: 220px;
-      background: radial-gradient(circle, rgba(176,160,64,.25) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(217,87,146,.25) 0%, transparent 70%);
       border-radius: 50%;
     }
     .combo-badge {
       position: absolute;
       top: 16px; left: 16px;
-      background: linear-gradient(135deg, #f0b429, #e09000);
-      color: #1a1a1a;
+      background: linear-gradient(135deg, #ffd9e9, #f5b1cf);
+      color: var(--green-600);
       font-family: 'Roboto', sans-serif;
       font-size: .78rem;
       font-weight: 700;
@@ -584,8 +704,8 @@
       text-decoration: line-through;
     }
     .combo-save-tag {
-      background: #f0b429;
-      color: #1a1a1a;
+      background: #ffd9e9;
+      color: var(--green-600);
       border-radius: 99px;
       padding: 3px 12px;
       font-size: .78rem;
@@ -605,13 +725,13 @@
       cursor: pointer;
       text-decoration: none;
       font-family: 'Roboto', sans-serif;
-      box-shadow: 0 6px 24px rgba(74,100,0,.35);
+      box-shadow: 0 6px 24px rgba(185,59,116,.35);
       transition: transform .25s, box-shadow .25s;
       max-width: 100%;
       text-align: center;
       white-space: normal;
     }
-    .combo-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(74,100,0,.4); }
+    .combo-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(185,59,116,.4); }
     .order-popup-overlay {
       position: fixed;
       inset: 0;
@@ -777,7 +897,7 @@
       border-radius: var(--radius-md);
       padding: 14px 20px;
       text-align: center;
-      box-shadow: 0 8px 28px rgba(74,100,0,.45);
+      box-shadow: 0 8px 28px rgba(185,59,116,.45);
       min-width: 140px;
     }
     .hero-price-overlay-label {
@@ -801,8 +921,8 @@
     }
     .hero-price-overlay-save {
       margin-top: 6px;
-      background: #f0b429;
-      color: #1a1a1a;
+      background: #ffd9e9;
+      color: var(--green-600);
       border-radius: 99px;
       padding: 2px 10px;
       font-size: .72rem;
@@ -811,7 +931,7 @@
     }
 
     /* ===== ICONS ===== */
-    i { color: #889110; }
+    i { color: #d95792; }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
@@ -830,13 +950,15 @@
       .features-grid { grid-template-columns: 1fr; }
       .ingredients-grid { grid-template-columns: 1fr 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .food-footer-grid { grid-template-columns: 1fr; }
       .input-row { grid-template-columns: 1fr; }
       .combo-highlight { grid-template-columns: 1fr; gap: 28px; padding: clamp(24px, 5vw, 28px) clamp(16px, 4vw, 22px); }
       .combo-image-wrap { max-width: 360px; }
       .price-box,
       .testimonial-card,
-      .features-visual { padding-left: clamp(20px, 5vw, 32px); padding-right: clamp(20px, 5vw, 32px); }
+      .features-visual,
+      .food-footer-copy,
+      .food-recommender { padding-left: clamp(20px, 5vw, 32px); padding-right: clamp(20px, 5vw, 32px); }
     }
     @media (max-width: 600px) {
       #lang-bar { padding: 8px 10px; gap: 8px; }
@@ -850,7 +972,7 @@
       .steps-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2,1fr); }
       .ingredients-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
+      .food-footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; text-align: center; }
       .gallery-grid { grid-template-columns: 1fr; }
       .combo-image-wrap { max-width: 300px; }
@@ -866,7 +988,10 @@
       .feature-item,
       .ingredient-card,
       .features-visual,
-      .register-box { padding-left: clamp(18px, 5vw, 24px); padding-right: clamp(18px, 5vw, 24px); }
+      .register-box,
+      .food-footer-copy,
+      .food-recommender,
+      .food-card { padding-left: clamp(18px, 5vw, 24px); padding-right: clamp(18px, 5vw, 24px); }
       #register { padding: 64px 0; }
     }
   </style>
@@ -1462,61 +1587,67 @@
 <!-- ============================
      FOOTER
 ============================= -->
-<footer>
+<footer id="food-picker">
   <div class="container">
-    <div class="footer-grid">
-      <div>
+    <div class="food-footer-grid">
+      <div class="food-footer-copy reveal">
         <div class="footer-brand">
           <img src="./Untitled-1.png" alt="ORIA" />
         </div>
+        <div class="food-footer-label">
+          <span data-lang="fil">Hanoi Food Guide</span>
+          <span data-lang="en">Hanoi Food Guide</span>
+        </div>
+        <h3 class="food-footer-title">
+          <span data-lang="fil">Hindi makapagpasya? Heto ang picker para sa “Ano ang kakainin ko ngayon?”</span>
+          <span data-lang="en">Can’t decide? Try the “What should I eat today?” picker</span>
+        </h3>
         <p class="footer-tagline">
-          <span data-lang="fil">Malalim na dark spot treatment set — pinananaliksik at pinaunlad na may internasyonal na antas ng mga aktibong sangkap, nagbibigay ng natural na maliwanag at makinis na balat na pangmatagalan.</span>
-          <span data-lang="en">Advanced anti-pigmentation skincare system — researched and developed with internationally acclaimed active ingredients for naturally radiant, long-lasting results.</span>
+          <span data-lang="fil">Pinagsama-sama namin ang 10 sa pinakasikat na pagkain ng Hanoi sa isang mabilis na suggestion tool para may inspirasyon ka agad para sa almusal, tanghalian, o hapunan.</span>
+          <span data-lang="en">We turned 10 of Hanoi’s most beloved dishes into a quick suggestion tool so you can instantly get an idea for breakfast, lunch, or dinner.</span>
         </p>
+        <div class="food-chip-list" id="foodChipList" aria-label="10 sikat na pagkain ng Hanoi">
+          <span class="food-chip">Phở bò</span>
+          <span class="food-chip">Bún chả</span>
+          <span class="food-chip">Bún thang</span>
+          <span class="food-chip">Chả cá Lã Vọng</span>
+          <span class="food-chip">Bún riêu cua</span>
+          <span class="food-chip">Bún đậu mắm tôm</span>
+          <span class="food-chip">Xôi xéo</span>
+          <span class="food-chip">Bánh cuốn Thanh Trì</span>
+          <span class="food-chip">Cháo sườn</span>
+          <span class="food-chip">Bánh tôm Hồ Tây</span>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>
-          <span data-lang="fil">Mga Produkto</span>
-          <span data-lang="en">Products</span>
-        </h4>
-        <ul class="footer-links">
-          <li><a href="#products">
-            <span data-lang="fil">Panlinis ng Mukha</span>
-            <span data-lang="en">Purifying Cleanser</span>
-          </a></li>
-          <li><a href="#products">
-            <span data-lang="fil">Activating Essence</span>
-            <span data-lang="en">Activating Essence</span>
-          </a></li>
-          <li><a href="#products">
-            <span data-lang="fil">Super Essence</span>
-            <span data-lang="en">Brightening Serum</span>
-          </a></li>
-          <li><a href="#products">
-            <span data-lang="fil">Krema sa Pagbabago</span>
-            <span data-lang="en">Recovery Cream</span>
-          </a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>
-          <span data-lang="fil">Suporta</span>
-          <span data-lang="en">Support</span>
-        </h4>
-        <ul class="footer-links">
-          <li><a href="#register">
-            <span data-lang="fil">Libreng Konsultasyon</span>
-            <span data-lang="en">Free Consultation</span>
-          </a></li>
-          <li><a href="#testimonials">
-            <span data-lang="fil">Mga Review ng Customer</span>
-            <span data-lang="en">Customer Reviews</span>
-          </a></li>
-          <li><a href="#ingredients">
-            <span data-lang="fil">Mga Sangkap</span>
-            <span data-lang="en">Ingredients</span>
-          </a></li>
-        </ul>
+
+      <div class="food-recommender reveal reveal-delay-1">
+        <div class="food-controls">
+          <label class="food-label" for="mealTimeSelect">
+            <span data-lang="fil">Piliin kung anong oras ka gustong kumain</span>
+            <span data-lang="en">Choose when you want to eat</span>
+          </label>
+          <select id="mealTimeSelect" class="food-select" aria-label="Meal time filter">
+            <option value="all">Any time</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+            <option value="snack">Snack</option>
+          </select>
+          <button type="button" class="food-btn" id="suggestMealBtn">
+            <span data-lang="fil"><i class="fas fa-utensils"></i> Magmungkahi ng pagkain ngayon</span>
+            <span data-lang="en"><i class="fas fa-utensils"></i> Suggest today’s dish</span>
+          </button>
+        </div>
+
+        <article class="food-card" id="foodSuggestionCard" aria-live="polite">
+          <p class="food-card-kicker" id="foodSuggestionKicker"></p>
+          <h4 class="food-card-name" id="foodSuggestionName"></h4>
+          <p class="food-card-desc" id="foodSuggestionDesc"></p>
+          <div class="food-meta">
+            <div class="food-meta-item" id="foodSuggestionBestFor"></div>
+            <div class="food-meta-item" id="foodSuggestionReason"></div>
+          </div>
+        </article>
       </div>
     </div>
     <hr class="footer-divider" />
@@ -1526,8 +1657,8 @@
         <span data-lang="en">All rights reserved.</span>
       </span>
       <span>
-        <span data-lang="fil"><i class="fas fa-leaf"></i> Natural · Agham · Epektibo</span>
-        <span data-lang="en"><i class="fas fa-leaf"></i> Nature · Science · Results</span>
+        <span data-lang="fil"><i class="fas fa-heart"></i> Lotus pink mood · Mga ideya sa pagkain sa Hanoi · Araw-araw na inspirasyon</span>
+        <span data-lang="en"><i class="fas fa-heart"></i> Lotus pink mood · Hanoi food ideas · Everyday inspiration</span>
       </span>
     </div>
   </div>
@@ -1567,6 +1698,182 @@
     }
   };
 
+  var FOOD_FILTER_TRANSLATIONS = {
+    fil: {
+      all: 'Kahit anong oras',
+      breakfast: 'Almusal',
+      lunch: 'Tanghalian',
+      dinner: 'Hapunan',
+      snack: 'Merienda'
+    },
+    en: {
+      all: 'Any time',
+      breakfast: 'Breakfast',
+      lunch: 'Lunch',
+      dinner: 'Dinner',
+      snack: 'Snack'
+    }
+  };
+
+  var FOOD_CARD_LABELS = {
+    fil: {
+      kicker: 'Napiling suggestion para sa araw na ito',
+      bestFor: 'Pinakabagay ngayon',
+      reason: 'Bakit ito ang bagay',
+      any: 'Kahit anong oras'
+    },
+    en: {
+      kicker: "Today's featured pick",
+      bestFor: 'Best for',
+      reason: 'Why it fits today',
+      any: 'Any time'
+    }
+  };
+
+  var FOOD_A11Y_TRANSLATIONS = {
+    fil: {
+      chipList: '10 sikat na pagkain ng Hanoi'
+    },
+    en: {
+      chipList: '10 popular Hanoi dishes'
+    }
+  };
+
+  var HANOI_DISHES = [
+    {
+      name: 'Phở bò',
+      bestFor: ['breakfast', 'lunch'],
+      bestForLabel: { fil: 'Mainit na almusal o maagang tanghalian', en: 'A warm breakfast or early lunch' },
+      description: {
+        fil: 'Classic beef noodle soup na mabango ang sabaw, comforting, at swak kapag gusto mo ng masarap pero hindi mabigat.',
+        en: 'A classic beef noodle soup with a fragrant broth that feels comforting and satisfying without being too heavy.'
+      },
+      reason: {
+        fil: 'Magandang piliin kapag gusto mo ng mainit, pamilyar, at madaling kainin anumang araw.',
+        en: 'Great when you want something warm, familiar, and easy to enjoy on any ordinary day.'
+      }
+    },
+    {
+      name: 'Bún chả',
+      bestFor: ['lunch', 'dinner'],
+      bestForLabel: { fil: 'Tanghalian o hapunan na mas busog', en: 'A fuller lunch or dinner' },
+      description: {
+        fil: 'Grilled pork, vermicelli, herbs, at sweet-savory dipping sauce — isa sa pinakasikat na lasa ng Hanoi.',
+        en: 'Grilled pork, vermicelli, herbs, and a sweet-savory dipping sauce — one of Hanoi’s signature flavors.'
+      },
+      reason: {
+        fil: 'Perfect kapag gusto mo ng balanced na combo ng usok, alat, tamis, at fresh herbs.',
+        en: 'Perfect when you want a balanced mix of smokiness, sweetness, savoriness, and fresh herbs.'
+      }
+    },
+    {
+      name: 'Bún thang',
+      bestFor: ['breakfast', 'lunch'],
+      bestForLabel: { fil: 'Magaan pero eleganteng almusal o tanghalian', en: 'A light but elegant breakfast or lunch' },
+      description: {
+        fil: 'Pinong rice noodles na may malinaw na sabaw, manok, itlog, at herbs para sa sopistikadong lasa.',
+        en: 'Fine rice noodles in a clear broth with chicken, egg, and herbs for a refined, layered flavor.'
+      },
+      reason: {
+        fil: 'Bagay kapag gusto mo ng delicately seasoned na pagkain na hindi nakakaumay.',
+        en: 'It suits days when you want something delicately seasoned and never overwhelming.'
+      }
+    },
+    {
+      name: 'Chả cá Lã Vọng',
+      bestFor: ['lunch', 'dinner'],
+      bestForLabel: { fil: 'Masayang tanghalian o hapunan kasama ang barkada', en: 'A social lunch or dinner' },
+      description: {
+        fil: 'Turmeric-marinated fish na iniihaw kasama ang dill at spring onion, pagkatapos ay kinakain na may noodles at peanuts.',
+        en: 'Turmeric-marinated fish grilled with dill and spring onion, then served with noodles and peanuts.'
+      },
+      reason: {
+        fil: 'Magandang piliin kung gusto mo ng kakaibang Hanoi specialty na may matapang pero eleganteng lasa.',
+        en: 'Choose this when you want a distinctive Hanoi specialty with bold but elegant flavors.'
+      }
+    },
+    {
+      name: 'Bún riêu cua',
+      bestFor: ['breakfast', 'lunch'],
+      bestForLabel: { fil: 'Maasim at malinamnam na almusal o tanghalian', en: 'A tangy and savory breakfast or lunch' },
+      description: {
+        fil: 'Tomato-crab noodle soup na may tofu at herbs, masarap kapag gusto mo ng may asim at umami.',
+        en: 'A tomato-crab noodle soup with tofu and herbs, ideal when you crave tang and umami together.'
+      },
+      reason: {
+        fil: 'Swak ito kapag gusto mong magising ang panlasa at kumain ng masasabawang may character.',
+        en: 'It works well when you want your palate woken up by a soup with character.'
+      }
+    },
+    {
+      name: 'Bún đậu mắm tôm',
+      bestFor: ['lunch', 'dinner'],
+      bestForLabel: { fil: 'Fun at matapang na tanghalian o hapunan', en: 'A fun, bold lunch or dinner' },
+      description: {
+        fil: 'Tofu, herbs, vermicelli, at signature fermented shrimp dip para sa adventurous na craving.',
+        en: 'Tofu, herbs, vermicelli, and the iconic fermented shrimp dip for an adventurous craving.'
+      },
+      reason: {
+        fil: 'Bagay ito kapag sawa ka na sa predictable at gusto mo ng mas intense na Hanoi street-food vibe.',
+        en: 'It fits when you are tired of predictable meals and want a stronger Hanoi street-food vibe.'
+      }
+    },
+    {
+      name: 'Xôi xéo',
+      bestFor: ['breakfast', 'snack'],
+      bestForLabel: { fil: 'Mabilis na almusal o pang-merienda', en: 'A quick breakfast or snack' },
+      description: {
+        fil: 'Sticky rice na may mung bean at crispy shallots — simple, mabango, at nakabubusog.',
+        en: 'Sticky rice with mung bean and crispy shallots — simple, fragrant, and surprisingly filling.'
+      },
+      reason: {
+        fil: 'Solid pick kapag maaga ang araw mo at kailangan mo ng convenient pero classic na comfort food.',
+        en: 'A solid pick when you have an early day and need convenient yet classic comfort food.'
+      }
+    },
+    {
+      name: 'Bánh cuốn Thanh Trì',
+      bestFor: ['breakfast', 'snack'],
+      bestForLabel: { fil: 'Magaan na almusal o mid-day bite', en: 'A light breakfast or mid-day bite' },
+      description: {
+        fil: 'Silky steamed rice rolls na may minced filling at fish sauce, banayad pero nakakaadik.',
+        en: 'Silky steamed rice rolls with minced filling and fish sauce, gentle yet deeply moreish.'
+      },
+      reason: {
+        fil: 'Piliin ito kung gusto mo ng malambot, eleganteng texture at hindi masyadong mabigat sa tiyan.',
+        en: 'Pick this when you want elegant textures and a meal that feels easy on the stomach.'
+      }
+    },
+    {
+      name: 'Cháo sườn',
+      bestFor: ['breakfast', 'snack'],
+      bestForLabel: { fil: 'Comforting na almusal o pang-gabi', en: 'A comforting breakfast or evening snack' },
+      description: {
+        fil: 'Smooth rice porridge na may pork rib at crispy dough sticks, very comforting lalo na sa maulang araw.',
+        en: 'Smooth rice porridge with pork rib and crispy dough sticks, especially comforting on cooler days.'
+      },
+      reason: {
+        fil: 'Pinakamaganda ito kapag gusto mo ng soft, warm, at soothing na pagkain.',
+        en: 'It is best when you want something soft, warm, and soothing.'
+      }
+    },
+    {
+      name: 'Bánh tôm Hồ Tây',
+      bestFor: ['lunch', 'dinner', 'snack'],
+      bestForLabel: { fil: 'Pang-meryenda o casual na hapunan', en: 'A snack, casual lunch, or dinner' },
+      description: {
+        fil: 'Crispy sweet potato fritter na may hipon, fresh herbs, at dipping sauce para sa crunchy craving.',
+        en: 'A crispy sweet potato fritter with shrimp, fresh herbs, and dipping sauce for crunchy cravings.'
+      },
+      reason: {
+        fil: 'Masarap piliin kapag gusto mo ng crispy, masaya, at medyo treat-yourself na pagkain.',
+        en: 'A great choice when you want something crispy, fun, and a little bit indulgent.'
+      }
+    }
+  ];
+
+  var foodSuggestionOffset = 0;
+
   function setLang(lang) {
     document.body.classList.toggle('lang-en', lang === 'en');
     document.documentElement.lang = lang === 'en' ? 'en' : 'fil';
@@ -1588,6 +1895,10 @@
       }
     });
 
+    updateFoodA11y(lang);
+    updateMealTimeOptions(lang);
+    renderFoodSuggestion();
+
     try { localStorage.setItem('oria_lang', lang); } catch(e) { console.warn('localStorage unavailable:', e); }
   }
 
@@ -1598,6 +1909,99 @@
       if (saved === 'en') setLang('en');
     } catch(e) {}
   })();
+
+  function getCurrentLang() {
+    return document.body.classList.contains('lang-en') ? 'en' : 'fil';
+  }
+
+  function updateMealTimeOptions(lang) {
+    var select = document.getElementById('mealTimeSelect');
+    var labels = FOOD_FILTER_TRANSLATIONS[lang] || FOOD_FILTER_TRANSLATIONS.fil;
+    if (!select) return;
+    Array.from(select.options).forEach(function(option) {
+      if (Object.prototype.hasOwnProperty.call(labels, option.value)) {
+        option.text = labels[option.value];
+      }
+    });
+  }
+
+  function updateFoodA11y(lang) {
+    var chipList = document.getElementById('foodChipList');
+    var labels = FOOD_A11Y_TRANSLATIONS[lang] || FOOD_A11Y_TRANSLATIONS.fil;
+    if (chipList) chipList.setAttribute('aria-label', labels.chipList);
+  }
+
+  function renderFoodMeta(target, iconClass, label, value) {
+    if (!target) return;
+    target.textContent = '';
+
+    var icon = document.createElement('i');
+    icon.className = iconClass;
+
+    var copy = document.createElement('span');
+    var strong = document.createElement('strong');
+    strong.textContent = label + ':';
+    copy.appendChild(strong);
+    copy.appendChild(document.createTextNode(' ' + value));
+
+    target.appendChild(icon);
+    target.appendChild(copy);
+  }
+
+  function getTodaySeed() {
+    var now = new Date();
+    var start = new Date(now.getFullYear(), 0, 1);
+    var dayOfYear = Math.floor((now - start) / 86400000);
+    return now.getFullYear() * 1000 + dayOfYear;
+  }
+
+  function renderFoodSuggestion() {
+    var mealTimeSelect = document.getElementById('mealTimeSelect');
+    var kickerEl = document.getElementById('foodSuggestionKicker');
+    var nameEl = document.getElementById('foodSuggestionName');
+    var descEl = document.getElementById('foodSuggestionDesc');
+    var bestForEl = document.getElementById('foodSuggestionBestFor');
+    var reasonEl = document.getElementById('foodSuggestionReason');
+    if (!mealTimeSelect || !kickerEl || !nameEl || !descEl || !bestForEl || !reasonEl) return;
+
+    var lang = getCurrentLang();
+    var labels = FOOD_CARD_LABELS[lang] || FOOD_CARD_LABELS.fil;
+    var mealLabels = FOOD_FILTER_TRANSLATIONS[lang] || FOOD_FILTER_TRANSLATIONS.fil;
+    var meal = mealTimeSelect.value || 'all';
+    var matches = HANOI_DISHES.filter(function(dish) {
+      return meal === 'all' || dish.bestFor.includes(meal);
+    });
+
+    if (!matches.length) matches = HANOI_DISHES.slice();
+
+    var pick = matches[(getTodaySeed() + foodSuggestionOffset) % matches.length];
+    kickerEl.textContent = labels.kicker + ' · ' + (mealLabels[meal] || labels.any);
+    nameEl.textContent = pick.name;
+    descEl.textContent = pick.description[lang];
+    renderFoodMeta(bestForEl, 'fas fa-clock', labels.bestFor, pick.bestForLabel[lang]);
+    renderFoodMeta(reasonEl, 'fas fa-sparkles', labels.reason, pick.reason[lang]);
+  }
+
+  var mealTimeSelect = document.getElementById('mealTimeSelect');
+  var suggestMealBtn = document.getElementById('suggestMealBtn');
+
+  if (mealTimeSelect) {
+    mealTimeSelect.addEventListener('change', function() {
+      foodSuggestionOffset = 0;
+      renderFoodSuggestion();
+    });
+  }
+
+  if (suggestMealBtn) {
+    suggestMealBtn.addEventListener('click', function() {
+      foodSuggestionOffset += 1;
+      renderFoodSuggestion();
+    });
+  }
+
+  updateFoodA11y(getCurrentLang());
+  updateMealTimeOptions(getCurrentLang());
+  renderFoodSuggestion();
 
   /* ── Scroll Reveal ── */
   var revealEls = document.querySelectorAll('.reveal');
