@@ -1606,7 +1606,7 @@
           <span data-lang="fil">Pinagsama-sama namin ang 10 sa pinakasikat na pagkain ng Hanoi sa isang mabilis na suggestion tool para may inspirasyon ka agad para sa almusal, tanghalian, o hapunan.</span>
           <span data-lang="en">We turned 10 of Hanoi’s most beloved dishes into a quick suggestion tool so you can instantly get an idea for breakfast, lunch, or dinner.</span>
         </p>
-        <div class="food-chip-list" aria-label="10 món phổ biến của Hà Nội">
+        <div class="food-chip-list" id="foodChipList" aria-label="10 sikat na pagkain ng Hanoi">
           <span class="food-chip">Phở bò</span>
           <span class="food-chip">Bún chả</span>
           <span class="food-chip">Bún thang</span>
@@ -1727,6 +1727,15 @@
       bestFor: 'Best for',
       reason: 'Why it fits today',
       any: 'Any time'
+    }
+  };
+
+  var FOOD_A11Y_TRANSLATIONS = {
+    fil: {
+      chipList: '10 sikat na pagkain ng Hanoi'
+    },
+    en: {
+      chipList: '10 popular Hanoi dishes'
     }
   };
 
@@ -1886,6 +1895,7 @@
       }
     });
 
+    updateFoodA11y(lang);
     updateMealTimeOptions(lang);
     renderFoodSuggestion();
 
@@ -1913,6 +1923,12 @@
         option.text = labels[option.value];
       }
     });
+  }
+
+  function updateFoodA11y(lang) {
+    var chipList = document.getElementById('foodChipList');
+    var labels = FOOD_A11Y_TRANSLATIONS[lang] || FOOD_A11Y_TRANSLATIONS.fil;
+    if (chipList) chipList.setAttribute('aria-label', labels.chipList);
   }
 
   function getTodaySeed() {
@@ -1966,6 +1982,7 @@
     });
   }
 
+  updateFoodA11y(getCurrentLang());
   updateMealTimeOptions(getCurrentLang());
   renderFoodSuggestion();
 
