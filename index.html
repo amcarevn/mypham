@@ -1931,6 +1931,23 @@
     if (chipList) chipList.setAttribute('aria-label', labels.chipList);
   }
 
+  function renderFoodMeta(target, iconClass, label, value) {
+    if (!target) return;
+    target.textContent = '';
+
+    var icon = document.createElement('i');
+    icon.className = iconClass;
+
+    var copy = document.createElement('span');
+    var strong = document.createElement('strong');
+    strong.textContent = label + ':';
+    copy.appendChild(strong);
+    copy.appendChild(document.createTextNode(' ' + value));
+
+    target.appendChild(icon);
+    target.appendChild(copy);
+  }
+
   function getTodaySeed() {
     var now = new Date();
     var start = new Date(now.getFullYear(), 0, 1);
@@ -1961,8 +1978,8 @@
     kickerEl.textContent = labels.kicker + ' · ' + (mealLabels[meal] || labels.any);
     nameEl.textContent = pick.name;
     descEl.textContent = pick.description[lang];
-    bestForEl.innerHTML = '<i class="fas fa-clock"></i><span><strong>' + labels.bestFor + ':</strong> ' + pick.bestForLabel[lang] + '</span>';
-    reasonEl.innerHTML = '<i class="fas fa-sparkles"></i><span><strong>' + labels.reason + ':</strong> ' + pick.reason[lang] + '</span>';
+    renderFoodMeta(bestForEl, 'fas fa-clock', labels.bestFor, pick.bestForLabel[lang]);
+    renderFoodMeta(reasonEl, 'fas fa-sparkles', labels.reason, pick.reason[lang]);
   }
 
   var mealTimeSelect = document.getElementById('mealTimeSelect');
