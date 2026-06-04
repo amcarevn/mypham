@@ -1599,11 +1599,11 @@
           <span data-lang="en">Hanoi Food Guide</span>
         </div>
         <h3 class="food-footer-title">
-          <span data-lang="fil">Hindi makapagdesisyon? Heto ang picker para sa “Ano ang kakainin ko ngayon?”</span>
+          <span data-lang="fil">Hindi makapagpasya? Heto ang picker para sa “Ano ang kakainin ko ngayon?”</span>
           <span data-lang="en">Can’t decide? Try the “What should I eat today?” picker</span>
         </h3>
         <p class="footer-tagline">
-          <span data-lang="fil">Pinagsama namin ang 10 sa pinakasikat na pagkain ng Hanoi sa isang mabilis na suggestion tool para may inspirasyon ka agad para sa almusal, tanghalian, o hapunan.</span>
+          <span data-lang="fil">Pinagsama-sama namin ang 10 sa pinakasikat na pagkain ng Hanoi sa isang mabilis na suggestion tool para may inspirasyon ka agad para sa almusal, tanghalian, o hapunan.</span>
           <span data-lang="en">We turned 10 of Hanoi’s most beloved dishes into a quick suggestion tool so you can instantly get an idea for breakfast, lunch, or dinner.</span>
         </p>
         <div class="food-chip-list" aria-label="10 món phổ biến của Hà Nội">
@@ -1919,7 +1919,7 @@
     var now = new Date();
     var start = new Date(now.getFullYear(), 0, 1);
     var dayOfYear = Math.floor((now - start) / 86400000);
-    return dayOfYear + now.getFullYear();
+    return now.getFullYear() * 1000 + dayOfYear;
   }
 
   function renderFoodSuggestion() {
@@ -1936,7 +1936,7 @@
     var mealLabels = FOOD_FILTER_TRANSLATIONS[lang] || FOOD_FILTER_TRANSLATIONS.fil;
     var meal = mealTimeSelect.value || 'all';
     var matches = HANOI_DISHES.filter(function(dish) {
-      return meal === 'all' || dish.bestFor.indexOf(meal) !== -1;
+      return meal === 'all' || dish.bestFor.includes(meal);
     });
 
     if (!matches.length) matches = HANOI_DISHES.slice();
